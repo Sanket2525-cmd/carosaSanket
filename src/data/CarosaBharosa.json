@@ -1,0 +1,38 @@
+[
+    {
+        "image": "https://i.ibb.co/ycGNhv0f/cercar.png",
+        "hoverImage": "https://i.ibb.co/BVZcjL3c/hoverimage.png",
+        "title": "Certified Cars",
+        "descr":"Inspected & certified for quality"
+    },
+    {
+        "image": "https://i.ibb.co/RTdtxdhS/verified.png",
+        "hoverImage": "https://i.ibb.co/8n1fw2tN/Vector.png",
+        "title": "⁠Verified Seller",
+         "descr":"Trustworthy sellers & identity checks"
+    },
+    {
+        "image": "https://i.ibb.co/zvZ9yX4/rate.png",
+        "hoverImage": "https://i.ibb.co/xSR7HZnV/Vector3.png",
+        "title": "Best Price Assurance",
+         "descr":"Competitive pricing & fair valuations"
+    },
+    {
+        "image": "https://i.ibb.co/CsQpr9p8/monthly.png",
+        "hoverImage": "https://i.ibb.co/FqxVk7nZ/Vector1.png",
+        "title": "12 Months Warranty",
+         "descr":"Comprehensive coverage up to 12 months"
+    },
+    {
+        "image": "https://i.ibb.co/B5GCMrrx/buyback.png",
+        "hoverImage": "https://i.ibb.co/zhbzFhtq/Vector4.png",
+        "title": "Buy Back Guarantee",
+         "descr":"Option to sell back with guaranteed value"
+    },
+    {
+        "image": "https://i.ibb.co/JRbpRKMw/freeassistence.png",
+        "hoverImage": "https://i.ibb.co/7xzQ5ycv/Vector2.png",
+        "title": "Lifetime Free Assistance",
+         "descr":"Roadside help & support for life"
+    }
+]

@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carosa Dealer Workspace</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    :root{
+      --c-primary:#0C3A89;
+      --c-green:#86C73B;
+      --c-orange:#F28B18;
+      --c-muted:#64748b;
+      --c-bg:#f6f8ff;
+    }
+    body{font-family:"Montserrat",sans-serif;background:var(--c-bg);color:rgb(17,24,39);}
+    .card{background:white;border-radius:1rem;box-shadow:0 4px 20px rgba(12,58,137,.08);transition:transform .22s ease,box-shadow .22s ease;position:relative;}
+    .card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(12,58,137,.15);}
+    .active-link{background-color:rgba(12,58,137,.1);color:var(--c-primary);font-weight:600;}
+    .modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.32);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;z-index:60;}
+    .modal{background:white;padding:1.25rem;border-radius:12px;max-width:980px;width:95%;box-shadow:0 10px 40px rgba(2,6,23,.2);animation:fadeUp .22s ease;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+    .chip{font-size:.75rem;padding:.28rem .6rem;border-radius:999px;font-weight:600;white-space:nowrap;}
+    .chip-active{background:rgba(134,199,59,.09);color:var(--c-green);}
+    .chip-cert{background:rgba(12,58,137,.06);color:var(--c-primary);}
+    .chip-offer{background:#f3f4f6;color:#374151;}
+    .page-btn { padding:.45rem .8rem; border-radius:.5rem; border:1px solid #e6e9f8; background:white; }
+    .report-scroll { max-height:56vh; overflow:auto; padding:.75rem; border-radius:.5rem; border:1px solid #eef2ff; background:#fbfbff; }
+  </style>
+</head>
+<body>
+  <div class="min-h-screen grid grid-cols-[260px_1fr]">
+    <!-- Sidebar -->
+    <aside id="sidebar-wrapper" class="bg-white border-r border-slate-200 px-4 py-6">
+      <div class="flex items-center gap-2 mb-6">
+        <div class="w-9 h-9 rounded-xl grid place-items-center bg-[var(--c-primary)] text-white font-extrabold">C</div>
+        <div>
+          <p class="text-xs text-[var(--c-muted)]">Dealer Suite</p>
+          <h1 class="text-lg font-extrabold">CAROSA</h1>
+        </div>
+      </div>
+      <nav id="sidebar" class="space-y-1 text-[15px]">
+        <a href="#" data-page="dashboard" class="flex items-center gap-3 px-3 py-2 rounded-xl active-link">🏠 Dashboard</a>
+        <a href="#" data-page="listing" class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-slate-100">🧾 Listing</a>
+        <a href="#" data-page="inspection" class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-slate-100">🛡️ Inspection</a>
+        <a href="#" data-page="bestoffer" class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-slate-100">🏷️ Best Offer</a>
+        <a href="#" data-page="testdrive" class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-slate-100">🚗 Test Drive</a>
+        <a href="#" data-page="orders" class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-slate-100">🧾 Order</a>
+        <a href="#" data-page="procurement" class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-slate-100">📦 Procurement</a>
+        <a href="#" data-page="billing" class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-slate-100">💳 Billing & Payment</a>
+      </nav>
+      <div class="mt-8 p-3 rounded-2xl bg-gradient-to-br from-[var(--c-primary)] to-[#1b57c5] text-white">
+        <p class="text-sm opacity-90">Need help?</p>
+        <p class="font-semibold">Contact Carosa</p>
+        <button class="mt-2 px-3 py-1.5 bg-white/15 hover:bg-white/25 rounded-lg text-sm">Open Chat</button>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main id="main" class="p-6 md:p-8 space-y-6">
+      <!-- Dashboard stays intact -->
+      <div id="dashboard-section">
+        <div class="flex items-center justify-between">
+          <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">Dashboard</h2>
+          <div class="flex items-center gap-3">
+            <button class="px-4 py-2 rounded-xl border border-slate-200 hover:bg-white">Filters</button>
+            <button class="px-4 py-2 rounded-xl bg-[var(--c-green)] text-white font-semibold hover:opacity-90">Create Listing</button>
+            <button class="px-4 py-2 rounded-xl bg-[var(--c-orange)] text-white font-semibold hover:opacity-90">Raise Inspection</button>
+          </div>
+        </div>
+
+        <section class="card p-5 md:p-6 mt-4">
+          <div class="grid md:grid-cols-[1.4fr_1fr] gap-6 items-center">
+            <div class="flex items-start gap-4">
+              <img class="w-14 h-14 rounded-full ring-4 ring-[var(--c-primary)]/10" src="https://i.pravatar.cc/80?img=13" alt="">
+              <div>
+                <div class="flex items-center gap-2">
+                  <h3 class="text-xl font-extrabold">Welcome to your Storemanager</h3>
+                  <span class="inline-flex items-center px-2 py-1 rounded-full bg-[var(--c-green)]/15 text-[var(--c-green)] font-semibold">Verified ✓</span>
+                  <span class="inline-flex items-center px-2 py-1 rounded-full bg-[var(--c-primary)]/10 text-[var(--c-primary)] font-semibold">Top Rated Dealer</span>
+                </div>
+                <p class="text-[var(--c-muted)] mt-1">Carosa Dealer ID: <span class="font-semibold text-slate-700">111-12-7347</span></p>
+            <p class="text-[var(--c-muted)]">
+              Carosa Drive Hub Address: <span class="font-semibold text-slate-700">demo address</span>
+            </p>
+              </div>
+            </div>
+
+            <div class="rounded-2xl p-4 border border-slate-200 bg-white/80">
+              <p class="text-sm text-[var(--c-muted)] mb-1">Reach out to your Account Manager</p>
+              <h4 class="text-lg font-bold">Gulam Dastgir</h4>
+              <p class="text-[var(--c-muted)]">gulam.dastgir@carosa.in</p>
+              <p class="font-semibold mt-1">9090909090</p>
+              <button class="mt-3 px-3 py-2 bg-[var(--c-primary)] text-white rounded-lg hover:opacity-90 text-sm">Contact Now</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="grid md:grid-cols-4 gap-4 mt-4">
+          <div class="card p-5">
+            <p class="text-[var(--c-muted)] text-sm mb-1">Vehicles Sold</p>
+            <div class="flex items-end justify-between">
+              <div class="text-4xl font-extrabold" data-count="200">200</div>
+              <span class="inline-flex items-center px-2 py-1 rounded-full bg-[var(--c-green)]/15 text-[var(--c-green)]">+12% MoM</span>
+            </div>
+          </div>
+          <div class="card p-5">
+            <p class="text-[var(--c-muted)] text-sm mb-1">GMV (SOLD)</p>
+            <div class="flex items-end justify-between">
+              <div class="text-4xl font-extrabold" data-count="50">50</div>
+              <span class="inline-flex items-center px-2 py-1 rounded-full bg-[var(--c-primary)]/10 text-[var(--c-primary)]">₹ Crore</span>
+            </div>
+          </div>
+          <div class="card p-5">
+            <p class="text-[var(--c-muted)] text-sm mb-1">Total Active Listing</p>
+            <div class="flex items-end justify-between">
+              <div class="text-4xl font-extrabold" data-count="10">10</div>
+              <span class="inline-flex items-center px-2 py-1 rounded-full bg-indigo-50 text-indigo-600">Healthy</span>
+            </div>
+          </div>
+          <div class="card p-5">
+            <p class="text-[var(--c-muted)] text-sm mb-1">Total Inspected Listing</p>
+            <div class="flex items-end justify-between">
+              <div class="text-4xl font-extrabold" data-count="10">10</div>
+              <span class="inline-flex items-center px-2 py-1 rounded-full bg-amber-50 text-amber-600">QC Passed</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="grid lg:grid-cols-[1.2fr_0.8fr] gap-6 mt-4">
+          <div class="card p-6">
+            <div class="flex items-center justify-between mb-4">
+              <h4 class="text-lg font-bold">Performance Overview</h4>
+              <div class="flex gap-2">
+                <button class="px-3 py-1.5 rounded-lg border hover:bg-slate-50 text-sm">7D</button>
+                <button class="px-3 py-1.5 rounded-lg border bg-slate-900 text-white text-sm">30D</button>
+                <button class="px-3 py-1.5 rounded-lg border hover:bg-slate-50 text-sm">YTD</button>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-[1.3fr_0.7fr] gap-6">
+              <div class="p-3 rounded-xl bg-slate-50"><canvas id="gmvArea"></canvas></div>
+              <div class="p-3 rounded-xl bg-slate-50">
+                <canvas id="listingDonut"></canvas>
+                <div class="mt-3 grid grid-cols-2 gap-2 text-sm">
+                  <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-[var(--c-green)] inline-block"></span> Active</div>
+                  <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-[var(--c-orange)] inline-block"></span> Pending</div>
+                  <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-[var(--c-primary)] inline-block"></span> Inspected</div>
+                  <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-slate-400 inline-block"></span> Inactive</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-6">
+            <div class="card p-6">
+              <h4 class="text-lg font-bold mb-4">Today’s Activity</h4>
+              <ul class="space-y-4 nice-scroll max-h-64 overflow-auto">
+                <li class="flex gap-3">
+                  <span class="w-2 h-2 rounded-full bg-[var(--c-green)] mt-2"></span>
+                  <div><p class="font-semibold">3 vehicles approved by QC</p><p class="text-sm text-[var(--c-muted)]">11:40 AM • Alto, Baleno, XUV300</p></div>
+                </li>
+                <li class="flex gap-3">
+                  <span class="w-2 h-2 rounded-full bg-[var(--c-primary)] mt-2"></span>
+                  <div><p class="font-semibold">Best offer received: ₹5.2L</p><p class="text-sm text-[var(--c-muted)]">11:05 AM • Swift 2019</p></div>
+                </li>
+                <li class="flex gap-3">
+                  <span class="w-2 h-2 rounded-full bg-[var(--c-orange)] mt-2"></span>
+                  <div><p class="font-semibold">2 test drives booked</p><p class="text-sm text-[var(--c-muted)]">10:50 AM • Tomorrow 4–6 PM</p></div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="card p-6">
+              <h4 class="text-lg font-bold mb-4">Quick Actions</h4>
+              <div class="grid grid-cols-2 gap-3">
+                <button class="px-3 py-3 rounded-xl border hover:bg-white text-left">
+                  <div class="font-semibold">New Listing</div><div class="text-sm text-[var(--c-muted)]">Add a vehicle in 2 min</div>
+                </button>
+                <button class="px-3 py-3 rounded-xl border hover:bg-white text-left">
+                  <div class="font-semibold">Schedule Inspection</div><div class="text-sm text-[var(--c-muted)]">Pick slot & hub</div>
+                </button>
+                <button class="px-3 py-3 rounded-xl border hover:bg-white text-left">
+                  <div class="font-semibold">Create Best Offer</div><div class="text-sm text-[var(--c-muted)]">Boost conversions</div>
+                </button>
+                <button class="px-3 py-3 rounded-xl border hover:bg-white text-left">
+                  <div class="font-semibold">Export Report</div><div class="text-sm text-[var(--c-muted)]">CSV for accounts</div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <p class="text-center text-sm text-[var(--c-muted)] pt-4">© Carosa • Dealer Workspace</p>
+      </div>
+    </main>
+  </div>
+
+  <div id="modal-area"></div>
+
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    const main = document.getElementById('main');
+    const dashboardSection = document.getElementById('dashboard-section');
+    const modalArea = document.getElementById('modal-area');
+
+    function closeModal(){ modalArea.innerHTML = ''; }
+    document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeModal(); });
+
+    function chipsInlineHTML(){
+      return `
+        <div class="hidden md:flex gap-2 absolute top-4 right-4">
+          <span class="chip chip-active">Active</span>
+          <span class="chip chip-cert">Certified Cars</span>
+          <span class="chip chip-offer">5 Offers</span>
+        </div>
+      `;
+    }
+
+    /* ===== LISTING ===== */
+    function listingCardHTML(){
+      return `
+      <div class="card p-4 md:p-5 flex flex-col md:flex-row items-center gap-5 hover:scale-[1.01] transition">
+        ${chipsInlineHTML()}
+        <div class="absolute right-4 top-16 text-xs md:text-sm bg-white/90 border border-slate-200 rounded-md px-2 py-1 shadow-sm">
+          Reg. No.: <span class="font-semibold">HR26CG1988</span>
+        </div>
+        <img src="https://cdn.pixabay.com/photo/2017/01/06/19/15/chevrolet-1956597_1280.jpg"
+             class="w-64 h-40 rounded-lg object-cover" alt="car">
+        <div class="flex-1 w-full">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="text-xl font-bold text-[var(--c-primary)]">Tata Indigo eCS LS CR4 BS-IV 2011</h3>
+              <p class="text-sm text-[var(--c-muted)]">DID: I416955602</p>
+              <div class="flex flex-wrap gap-6 text-sm text-gray-700 mt-2">
+                <p><b>Active Since:</b> 30 Apr 2025</p>
+                <p><b>Last Modified:</b> 09 Oct 2025</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex gap-8 mt-3 font-semibold">
+            <p>Listing Price: <span class="text-gray-900">₹1.5 Lakh</span></p>
+            <p>Offer Price: <span class="text-gray-900">₹1.5 Lakh</span></p>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <button class="px-3 py-1.5 bg-[var(--c-green)] text-white rounded-md">View Listing</button>
+            <button class="px-3 py-1.5 bg-[var(--c-primary)] text-white rounded-md">Edit Listing</button>
+            <button class="px-3 py-1.5 bg-red-500 text-white rounded-md" onclick="openDeactivate()">Deactivate</button>
+            <button class="px-3 py-1.5 bg-[var(--c-green)] text-white rounded-md">Raise Inspection</button>
+            <button class="px-3 py-1.5 bg-purple-600 text-white rounded-md" onclick="openUpdate()">Update Price</button>
+          </div>
+        </div>
+      </div>`;
+    }
+    function listingPage(){
+      return `
+        <div>
+          <h2 class="text-3xl font-extrabold mb-6">Listings</h2>
+          <div class="flex justify-between items-center mb-6">
+            <div class="flex gap-3">
+              <button class="px-4 py-2 border rounded-lg">Filters</button>
+              
+            </div>
+          </div>
+          <div class="grid gap-6">
+            ${listingCardHTML()+listingCardHTML()+listingCardHTML()}
+          </div>
+        </div>`;
+    }
+
+    /* ===== INSPECTION ===== */
+    function inspectionCard(status){
+      const raised = "12 Oct 2025 11:30 AM";
+      const completed = "13 Oct 2025 04:45 PM";
+      const statusLine = status === 'done'
+        ? `<span class="font-semibold">Completed on ${completed}</span>`
+        : `<span class="font-semibold">Pending since ${raised}</span>`;
+
+      const buttons = status === 'done' ? `
+        <div class="flex flex-col items-stretch gap-2 w-56">
+          <button class="px-3 py-2 bg-[var(--c-green)] text-white rounded-md" onclick="openReraise()">Re-raise Inspection</button>
+          <button class="px-3 py-2 bg-[var(--c-primary)] text-white rounded-md" onclick="openReport()">View Report</button>
+          <button class="px-3 py-2 bg-[var(--c-orange)] text-white rounded-md" onclick="openDownload()">Download Report</button>
+        </div>` : `
+        <div class="flex flex-col items-stretch gap-2 w-56">
+          <button class="px-3 py-2 bg-[var(--c-green)] text-white rounded-md" onclick="openRaise()">Raise Inspection</button>
+        </div>`;
+
+      return `
+      <div class="card p-4 md:p-5 hover:scale-[1.01] transition">
+        <div class="flex flex-col md:flex-row items-start md:items-stretch gap-5">
+          <div class="flex-1 flex gap-5">
+            <img src="https://cdn.pixabay.com/photo/2017/01/06/19/15/chevrolet-1956597_1280.jpg"
+                 class="w-64 h-40 rounded-lg object-cover self-start" alt="car">
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-[var(--c-primary)]">Tata Indigo eCS LS CR4 BS-IV 2011</h3>
+              <p class="text-sm text-[var(--c-muted)] mb-2">DID: I416955602</p>
+              <p class="text-sm text-slate-700 mb-2">Reg. No.: <span class="font-semibold">HR26CG1988</span></p>
+              <div class="text-sm text-gray-800 space-y-1">
+                <p><b>Inspection Raised:</b> ${raised}</p>
+                <p><b>Inspection Status:</b> ${statusLine}</p>
+              </div>
+            </div>
+          </div>
+          <div class="md:self-start md:ml-auto">${buttons}</div>
+        </div>
+      </div>`;
+    }
+    function inspectionPage(){
+      return `
+        <div>
+          <h2 class="text-3xl font-extrabold mb-6">Inspection</h2>
+          <div class="grid gap-6">
+            ${inspectionCard('done') + inspectionCard('done') + inspectionCard('pending')}
+          </div>
+        </div>`;
+    }
+
+    /* ===== BEST OFFER ===== */
+    const BEST_OFFER_DATA = [
+      { id: 'I416955602', title: 'Tata Indigo eCS LS CR4 BS-IV 2011', img: 'https://cdn.pixabay.com/photo/2017/01/06/19/15/chevrolet-1956597_1280.jpg', activeSince: '30 Apr 2025', lastModified: '09 Oct 2025', sellingPrice: '₹1.60 Lakh', currentBest: '₹1.52 Lakh', offers: 5 },
+      { id: 'I416955602', title: 'Tata Indigo eCS LS CR4 BS-IV 2011', img: 'https://cdn.pixabay.com/photo/2017/01/06/19/15/chevrolet-1956597_1280.jpg', activeSince: '30 Apr 2025', lastModified: '09 Oct 2025', sellingPrice: '₹1.60 Lakh', currentBest: '₹1.52 Lakh', offers: 7 },
+      { id: 'I416955602', title: 'Tata Indigo eCS LS CR4 BS-IV 2011', img: 'https://cdn.pixabay.com/photo/2017/01/06/19/15/chevrolet-1956597_1280.jpg', activeSince: '30 Apr 2025', lastModified: '09 Oct 2025', sellingPrice: '₹1.60 Lakh', currentBest: '₹1.52 Lakh', offers: 3 },
+    ];
+    function bestOfferCardHTML(item, idx){
+      return `
+      <div class="card p-4 md:p-5 flex flex-col md:flex-row items-center gap-5 hover:scale-[1.01] transition">
+        <img src="${item.img}" class="w-64 h-40 rounded-lg object-cover" alt="car">
+        <div class="flex-1 w-full">
+          <div class="flex justify-between items-start gap-4">
+            <div>
+              <h3 class="text-xl font-bold text-[var(--c-primary)]">${item.title}</h3>
+              <p class="text-sm text-[var(--c-muted)]">DID: ${item.id}</p>
+              <p class="text-sm text-slate-700">Reg. No.: <span class="font-semibold">HR26CG1988</span></p>
+              <div class="flex flex-wrap gap-6 text-sm text-gray-700 mt-2">
+                <p><b>Active Since:</b> ${item.activeSince}</p>
+                <p><b>Last Modified:</b> ${item.lastModified}</p>
+                <p><b>Selling Price:</b> ${item.sellingPrice}</p>
+                <p><b>Current Best Offer:</b> ${item.currentBest}</p>
+              </div>
+            </div>
+            <div class="md:self-start md:ml-auto">
+              <button class="px-5 py-4 rounded-xl bg-[var(--c-orange)] text-white font-extrabold shadow hover:opacity-95"
+                      onclick="openOffers(${idx})">${item.offers} Offers</button>
+            </div>
+          </div>
+        </div>
+      </div>`;
+    }
+    function bestOfferPage(){
+      return `
+        <div>
+          <h2 class="text-3xl font-extrabold mb-6">Best Offer</h2>
+          <div class="flex justify-between items-center mb-6">
+            <div class="flex gap-3">
+              <button class="px-4 py-2 border rounded-lg">Filters</button>
+              
+            </div>
+          </div>
+          <div class="grid gap-6">
+            ${BEST_OFFER_DATA.map((it,i)=>bestOfferCardHTML(it,i)).join('')}
+          </div>
+        </div>`;
+    }
+    function openOffers(idx){
+      const item = BEST_OFFER_DATA[idx];
+      const buyers = [
+        { name: 'Rahul Verma', price: '₹1,52,000' },
+        { name: 'Neha Sharma', price: '₹1,50,500' },
+        { name: 'Amit Singh', price: '₹1,49,000' },
+        { name: 'Priya Gupta', price: '₹1,45,500' },
+        { name: 'Vikas Rao', price: '₹1,44,000' },
+      ];
+      const rows = buyers.map((b, i) => `
+        <tr class="border-b last:border-0">
+          <td class="px-3 py-2">${i+1}</td>
+          <td class="px-3 py-2 font-medium">${b.name}</td>
+          <td class="px-3 py-2">${b.price}</td>
+          <td class="px-3 py-2 text-right">
+            <button class="px-3 py-1.5 border rounded-md hover:bg-slate-50">View Offer</button>
+          </td>
+        </tr>
+      `).join('');
+      modalArea.innerHTML = `
+        <div class="modal-bg" onclick="if(event.target===this)closeModal()">
+          <div class="modal">
+            <div class="flex items-start justify-between gap-4 mb-3">
+              <div>
+                <h3 class="text-xl font-bold text-[var(--c-primary)]">Offers – ${item.title}</h3>
+                <p class="text-sm text-[var(--c-muted)]">DID: ${item.id} • Total Offers: ${item.offers}</p>
+              </div>
+              <button onclick="closeModal()" class="px-3 py-1.5 border rounded-md">Close</button>
+            </div>
+            <div class="overflow-auto rounded-lg border">
+              <table class="min-w-full text-sm">
+                <thead class="bg-slate-50 text-left">
+                  <tr>
+                    <th class="px-3 py-2">#</th>
+                    <th class="px-3 py-2">Buyer</th>
+                    <th class="px-3 py-2">Offer Price</th>
+                    <th class="px-3 py-2 text-right">Action</th>
+                  </tr>
+                </thead>
+                <tbody>${rows}</tbody>
+              </table>
+            </div>
+          </div>
+        </div>`;
+    }
+
+    /* ===== TEST DRIVE ===== */
+    const TEST_DRIVE_DATA = [
+      { id: 'I416955602', title: 'Tata Indigo eCS LS CR4 BS-IV 2011', img: 'https://cdn.pixabay.com/photo/2017/01/06/19/15/chevrolet-1956597_1280.jpg', activeSince: '30 Apr 2025', lastModified: '09 Oct 2025', testDrives: 5 },
+      { id: 'I416955602', title: 'Tata Indigo eCS LS CR4 BS-IV 2011', img: 'https://cdn.pixabay.com/photo/2017/01/06/19/15/chevrolet-1956597_1280.jpg', activeSince: '30 Apr 2025', lastModified: '09 Oct 2025', testDrives: 3 },
+      { id: 'I416955602', title: 'Tata Indigo eCS LS CR4 BS-IV 2011', img: 'https://cdn.pixabay.com/photo/2017/01/06/19/15/chevrolet-1956597_1280.jpg', activeSince: '30 Apr 2025', lastModified: '09 Oct 2025', testDrives: 7 },
+    ];
+    function testDriveCardHTML(item, idx){
+      return `
+      <div class="card p-4 md:p-5 flex flex-col md:flex-row items-center gap-5 hover:scale-[1.01] transition">
+        <img src="${item.img}" class="w-64 h-40 rounded-lg object-cover" alt="car">
+        <div class="flex-1 w-full">
+          <div class="flex justify-between items-start gap-4">
+            <div>
+              <h3 class="text-xl font-bold text-[var(--c-primary)]">${item.title}</h3>
+              <p class="text-sm text-[var(--c-muted)]">DID: ${item.id}</p>
+              <p class="text-sm text-slate-700">Reg. No.: <span class="font-semibold">HR26CG1988</span></p>
+              <div class="flex flex-wrap gap-6 text-sm text-gray-700 mt-2">
+                <p><b>Active Since:</b> ${item.activeSince}</p>
+                <p><b>Last Modified:</b> ${item.lastModified}</p>
+              </div>
+            </div>
+            <div class="md:self-start md:ml-auto">
+              <button class="px-5 py-4 rounded-xl bg-[var(--c-orange)] text-white font-extrabold shadow hover:opacity-95"
+                      onclick="openTestDrives(${idx})">${item.testDrives} Test Drive</button>
+            </div>
+          </div>
+        </div>
+      </div>`;
+    }
+    function testDrivePage(){
+      return `
+        <div>
+          <h2 class="text-3xl font-extrabold mb-6">Test Drive</h2>
+          <div class="flex justify-between items-center mb-6">
+            <div class="flex gap-3">
+              <button class="px-4 py-2 border rounded-lg">Filters</button>
+              
+            </div>
+          </div>
+          <div class="grid gap-6">
+            ${TEST_DRIVE_DATA.map((it,i)=>testDriveCardHTML(it,i)).join('')}
+          </div>
+        </div>`;
+    }
+    function openTestDrives(idx){
+      const item = TEST_DRIVE_DATA[idx];
+      const rowsData = [
+        { name: 'Rahul Verma', slot: 'Mon, 20 Oct 2025 — 11:00 AM' },
+        { name: 'Neha Sharma', slot: 'Mon, 20 Oct 2025 — 02:30 PM' },
+        { name: 'Amit Singh', slot: 'Tue, 21 Oct 2025 — 10:00 AM' },
+        { name: 'Priya Gupta', slot: 'Tue, 21 Oct 2025 — 04:00 PM' },
+        { name: 'Vikas Rao',  slot: 'Wed, 22 Oct 2025 — 12:15 PM' },
+      ];
+      const rows = rowsData.map((r, i) => `
+        <tr class="border-b last:border-0">
+          <td class="px-3 py-2">${i+1}</td>
+          <td class="px-3 py-2 font-medium">${r.name}</td>
+          <td class="px-3 py-2">${r.slot}</td>
+          <td class="px-3 py-2 text-right space-x-2">
+            <button class="px-3 py-1.5 rounded-md bg-[var(--c-green)] text-white hover:opacity-95">Confirm</button>
+            <button class="px-3 py-1.5 rounded-md bg-[var(--c-primary)] text-white hover:opacity-95">Request Reschedule</button>
+            <button class="px-3 py-1.5 rounded-md bg-red-500 text-white hover:opacity-95">Request Cancel</button>
+          </td>
+        </tr>
+      `).join('');
+      modalArea.innerHTML = `
+        <div class="modal-bg" onclick="if(event.target===this)closeModal()">
+          <div class="modal">
+            <div class="flex items-start justify-between gap-4 mb-3">
+              <div>
+                <h3 class="text-xl font-bold text-[var(--c-primary)]">Test Drive – ${item.title}</h3>
+                <p class="text-sm text-[var(--c-muted)]">DID: ${item.id} • Total Requests: ${item.testDrives}</p>
+              </div>
+              <button onclick="closeModal()" class="px-3 py-1.5 border rounded-md">Close</button>
+            </div>
+            <div class="overflow-auto rounded-lg border">
+              <table class="min-w-full text-sm">
+                <thead class="bg-slate-50 text-left">
+                  <tr>
+                    <th class="px-3 py-2">#</th>
+                    <th class="px-3 py-2">Buyer Name</th>
+                    <th class="px-3 py-2">Test Drive Day, Date & Time</th>
+                    <th class="px-3 py-2 text-right">Action</th>
+                  </tr>
+                </thead>
+                <tbody>${rows}</tbody>
+              </table>
+            </div>
+          </div>
+        </div>`;
+    }
+
+    /* ===== ORDER ===== */
+    const ORDER_DATA = [
+      { oid: 'O-2025-00087', id: 'I416955602', regNo: 'UP65 AB 1234', title: 'Tata Indigo eCS LS CR4 BS-IV 2011', activeSince: '30 Apr 2025', lastModified: '09 Oct 2025', tokenTime: 'Fri, 17 Oct 2025 — 06:45 PM', status: ['Token Received','Loan Approved','RTO In Progress','Delivery Scheduled'] },
+      { oid: 'O-2025-00088', id: 'I416955602', regNo: 'UP65 AB 5678', title: 'Tata Indigo eCS LS CR4 BS-IV 2011', activeSince: '30 Apr 2025', lastModified: '09 Oct 2025', tokenTime: 'Sat, 18 Oct 2025 — 11:20 AM', status: ['Token Received','Loan Under Review'] },
+      { oid: 'O-2025-00089', id: 'I416955602', regNo: 'UP65 XY 9012', title: 'Tata Indigo eCS LS CR4 BS-IV 2011', activeSince: '30 Apr 2025', lastModified: '09 Oct 2025', tokenTime: 'Sat, 18 Oct 2025 — 03:05 PM', status: ['Token Received','Loan Approved','Vehicle Ready for Delivery'] },
+    ];
+    function orderCardHTML(item, idx){
+      return `
+      <div class="card p-4 md:p-5 hover:scale-[1.01] transition">
+        <div class="flex justify-between items-start gap-4">
+          <div class="space-y-1">
+            <div class="text-sm text-[var(--c-muted)]">Car Details</div>
+            <h3 class="text-xl font-bold text-[var(--c-primary)]">${item.title}</h3>
+            <p class="text-sm text-[var(--c-muted)]">Reg. No.: ${item.regNo}</p>
+            <p class="text-sm text-[var(--c-muted)]">OID: ${item.oid}</p>
+            <div class="flex flex-wrap gap-6 text-sm text-gray-700 mt-2">
+              <p><b>Active Since:</b> ${item.activeSince}</p>
+              <p><b>Last Modified:</b> ${item.lastModified}</p>
+            </div>
+          </div>
+          <div class="md:self-start md:ml-auto flex flex-col items-end gap-2">
+            <div class="px-5 py-3 rounded-xl bg-[var(--c-green)]/10 text-[var(--c-green)] font-semibold shadow-sm">
+              Token Received • ${item.tokenTime}
+            </div>
+            <button class="px-5 py-3 rounded-xl bg-[var(--c-primary)] text-white font-semibold shadow hover:opacity-95"
+                    onclick="openOrderStatus(${idx})">View Status</button>
+          </div>
+        </div>
+      </div>`;
+    }
+    function orderPage(){
+      return `
+        <div>
+          <h2 class="text-3xl font-extrabold mb-6">Order</h2>
+          <div class="flex justify-between items-center mb-6">
+            <div class="flex gap-3">
+              <button class="px-4 py-2 border rounded-lg">Filters</button>
+              
+            </div>
+          </div>
+          <div class="grid gap-6">
+            ${ORDER_DATA.map((it,i)=>orderCardHTML(it,i)).join('')}
+          </div>
+        </div>`;
+    }
+    function openOrderStatus(idx){
+      const item = ORDER_DATA[idx];
+      const steps = item.status.map((s, i) => `
+        <div class="flex items-start gap-3">
+          <div class="mt-1 w-2.5 h-2.5 rounded-full ${i === item.status.length-1 ? 'bg-amber-500' : 'bg-[var(--c-green)]'}"></div>
+          <div><div class="font-medium">${s}</div><div class="text-xs text-[var(--c-muted)]">#${i+1}</div></div>
+        </div>
+      `).join('<div class="h-3"></div>');
+      modalArea.innerHTML = `
+        <div class="modal-bg" onclick="if(event.target===this)closeModal()">
+          <div class="modal">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <div>
+                <h3 class="text-xl font-bold text-[var(--c-primary)]">Order Status – ${item.title}</h3>
+                <p class="text-sm text-[var(--c-muted)]">OID: ${item.oid} • ${item.tokenTime}</p>
+              </div>
+              <button onclick="closeModal()" class="px-3 py-1.5 border rounded-md">Close</button>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="p-3 rounded-lg border bg-slate-50">
+                <h4 class="font-semibold mb-2">Status Timeline</h4>
+                <div class="space-y-2">${steps}</div>
+              </div>
+              <div class="p-3 rounded-lg border">
+                <h4 class="font-semibold mb-2">Quick Actions</h4>
+                <div class="flex flex-wrap gap-2">
+                  <button class="px-3 py-1.5 rounded-md bg-[var(--c-green)] text-white hover:opacity-95">Mark Ready for Delivery</button>
+                  <button class="px-3 py-1.5 rounded-md bg-[var(--c-primary)] text-white hover:opacity-95">Download Invoice</button>
+                  <button class="px-3 py-1.5 rounded-md bg-red-500 text-white hover:opacity-95">Cancel Order</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>`;
+    }
+
+    /* ===== PROCUREMENT (Tabbed) ===== */
+    function goTo(page){
+      const link = sidebar.querySelector(`a[data-page="${page}"]`);
+      if(link){ link.click(); }
+    }
+    function procurementListingCard(item){
+      return `
+      <div class="card p-4 md:p-5 flex flex-col md:flex-row items-center gap-5 hover:scale-[1.01] transition">
+        <img src="${item.img}" class="w-64 h-40 rounded-lg object-cover" alt="car">
+        <div class="flex-1 w-full">
+          <div class="flex justify-between items-start gap-4">
+            <div>
+              <h3 class="text-xl font-bold text-[var(--c-primary)]">${item.title}</h3>
+              <p class="text-sm text-[var(--c-muted)]">DID: ${item.did}</p>
+              <div class="flex flex-wrap gap-6 text-sm text-gray-700 mt-2">
+                <p><b>Selling Price:</b> ${item.sp}</p>
+                <p><b>Drive Hub:</b> ${item.hub}</p>
+              </div>
+            </div>
+            <div class="md:self-start md:ml-auto grid gap-2">
+              <button class="px-4 py-2 rounded-xl bg-[var(--c-green)] text-white hover:opacity-95" onclick="goTo('listing')">View Listing</button>
+              <button class="px-4 py-2 rounded-xl bg-[var(--c-primary)] text-white hover:opacity-95" onclick="goTo('inspection')">View Inspection Report</button>
+              <button class="px-4 py-2 rounded-xl bg-amber-500 text-white hover:opacity-95" onclick="goTo('bestoffer')">Make Best Offer</button>
+              <button class="px-4 py-2 rounded-xl bg-[var(--c-orange)] text-white hover:opacity-95" onclick="goTo('testdrive')">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>`;
+    }
+    function procurementBestOfferCard(item){
+      return `
+      <div class="card p-4 md:p-5 flex flex-col md:flex-row items-center gap-5 hover:scale-[1.01] transition">
+        <img src="${item.img}" class="w-64 h-40 rounded-lg object-cover" alt="car">
+        <div class="flex-1 w-full">
+          <div class="flex justify-between items-start gap-4">
+            <div>
+              <h3 class="text-xl font-bold text-[var(--c-primary)]">${item.title}</h3>
+              <p class="text-sm text-[var(--c-muted)]">DID: ${item.did}</p>
+              <div class="flex flex-wrap gap-6 text-sm text-gray-700 mt-2">
+                <p><b>Selling Price:</b> ${item.sp}</p>
+                <p><b>Negotiated Price:</b> ${item.np}</p>
+                <p><b>Drive Hub:</b> ${item.hub}</p>
+              </div>
+            </div>
+            <div class="md:self-start md:ml-auto">
+              <div class="px-5 py-3 rounded-xl bg-[var(--c-primary)]/10 text-[var(--c-primary)] font-semibold shadow-sm mb-2">
+                Status: ${item.status}
+              </div>
+              <button class="px-5 py-3 rounded-xl bg-[var(--c-primary)] text-white font-semibold shadow hover:opacity-95" onclick="goTo('bestoffer')">View Offer Status</button>
+            </div>
+          </div>
+        </div>
+      </div>`;
+    }
+    function procurementTestDriveCard(item){
+      return `
+      <div class="card p-4 md:p-5 flex flex-col md:flex-row items-center gap-5 hover:scale-[1.01] transition">
+        <img src="${item.img}" class="w-64 h-40 rounded-lg object-cover" alt="car">
+        <div class="flex-1 w-full">
+          <div class="flex justify-between items-start gap-4">
+            <div>
+              <h3 class="text-xl font-bold text-[var(--c-primary)]">${item.title}</h3>
+              <p class="text-sm text-[var(--c-muted)]">DID: ${item.did}</p>
+              <div class="flex flex-wrap gap-6 text-sm text-gray-700 mt-2">
+                <p><b>Selling Price:</b> ${item.sp}</p>
+                <p><b>Negotiated Price:</b> ${item.np}</p>
+                <p><b>Drive Hub:</b> ${item.hub}</p>
+              </div>
+            </div>
+            <div class="md:self-start md:ml-auto">
+              <div class="px-5 py-3 rounded-xl bg-[var(--c-primary)]/10 text-[var(--c-primary)] font-semibold shadow-sm mb-2">
+                Status: ${item.status}
+              </div>
+              <button class="px-5 py-3 rounded-xl bg-[var(--c-primary)] text-white font-semibold shadow hover:opacity-95" onclick="goTo('testdrive')">View Offer Status</button>
+            </div>
+          </div>
+        </div>
+      </div>`;
+    }
+    function procurementOrderCard(item){
+      return `
+      <div class="card p-4 md:p-5 hover:scale-[1.01] transition">
+        <div class="flex justify-between items-start gap-4">
+          <div>
+            <h3 class="text-xl font-bold text-[var(--c-primary)]">${item.title}</h3>
+            <p class="text-sm text-[var(--c-muted)]">DID: ${item.did}</p>
+            <div class="flex flex-wrap gap-6 text-sm text-gray-700 mt-2">
+              <p><b>Selling Price:</b> ${item.sp}</p>
+              <p><b>Negotiated Price:</b> ${item.np}</p>
+              <p><b>Drive Hub:</b> ${item.hub}</p>
+            </div>
+          </div>
+          <div class="md:self-start md:ml-auto flex flex-col items-end gap-2">
+            <div class="px-5 py-3 rounded-xl bg-[var(--c-green)]/10 text-[var(--c-green)] font-semibold shadow-sm">
+              Token Amount Paid: 12,200 • ${item.tokenTime}
+            </div>
+            <button class="px-5 py-3 rounded-xl bg-[var(--c-primary)] text-white font-semibold shadow hover:opacity-95" onclick="goTo('orders')">View Order Status</button>
+          </div>
+        </div>
+      </div>`;
+    }
+    const PROCUREMENT_DATA = {
+      listing: [
+        { title: 'Tata Indigo eCS LS CR4 BS-IV 2011', did: 'I416955602', sp: '₹1.60 Lakh', hub: 'Carosa Drive Hub, Varanasi', img: 'https://cdn.pixabay.com/photo/2017/01/06/19/15/chevrolet-1956597_1280.jpg' },
+        { title: 'Tata Indigo eCS LS CR4 BS-IV 2011', did: 'I416955602', sp: '₹1.60 Lakh', hub: 'Carosa Drive Hub, Varanasi', img: 'https://cdn.pixabay.com/photo/2017/01/06/19/15/chevrolet-1956597_1280.jpg' },
+        { title: 'Tata Indigo eCS LS CR4 BS-IV 2011', did: 'I416955602', sp: '₹1.60 Lakh', hub: 'Carosa Drive Hub, Varanasi', img: 'https://cdn.pixabay.com/photo/2017/01/06/19/15/chevrolet-1956597_1280.jpg' },
+      ],
+      bestoffer: [
+        { title: 'Tata Indigo eCS LS CR4 BS-IV 2011', did: 'I416955602', sp: '₹1.60 Lakh', np: '₹1.52 Lakh', hub: 'Carosa Drive Hub, Varanasi', status: 'Negotiation in Progress', img: 'https://cdn.pixabay.com/photo/2017/01/06/19/15/chevrolet-1956597_1280.jpg' },
+        { title: 'Tata Indigo eCS LS CR4 BS-IV 2011', did: 'I416955602', sp: '₹1.60 Lakh', np: '₹1.52 Lakh', hub: 'Carosa Drive Hub, Varanasi', status: 'Offer Submitted', img: 'https://cdn.pixabay.com/photo/2017/01/06/19/15/chevrolet-1956597_1280.jpg' },
+        { title: 'Tata Indigo eCS LS CR4 BS-IV 2011', did: 'I416955602', sp: '₹1.60 Lakh', np: '₹1.52 Lakh', hub: 'Carosa Drive Hub, Varanasi', status: 'Counter Offer Received', img: 'https://cdn.pixabay.com/photo/2017/01/06/19/15/chevrolet-1956597_1280.jpg' },
+      ],
+      testdrive: [
+        { title: 'Tata Indigo eCS LS CR4 BS-IV 2011', did: 'I416955602', sp: '₹1.60 Lakh', np: '₹1.52 Lakh', hub: 'Carosa Drive Hub, Varanasi', status: 'Scheduled for Mon, 20 Oct 11:00 AM', img: 'https://cdn.pixabay.com/photo/2017/01/06/19/15/chevrolet-1956597_1280.jpg' },
+        { title: 'Tata Indigo eCS LS CR4 BS-IV 2011', did: 'I416955602', sp: '₹1.60 Lakh', np: '₹1.52 Lakh', hub: 'Carosa Drive Hub, Varanasi', status: 'Pending Confirmation', img: 'https://cdn.pixabay.com/photo/2017/01/06/19/15/chevrolet-1956597_1280.jpg' },
+        { title: 'Tata Indigo eCS LS CR4 BS-IV 2011', did: 'I416955602', sp: '₹1.60 Lakh', np: '₹1.52 Lakh', hub: 'Carosa Drive Hub, Varanasi', status: 'Reschedule Requested', img: 'https://cdn.pixabay.com/photo/2017/01/06/19/15/chevrolet-1956597_1280.jpg' },
+      ],
+      order: [
+        { title: 'Tata Indigo eCS LS CR4 BS-IV 2011', did: 'I416955602', sp: '₹1.60 Lakh', np: '₹1.52 Lakh', hub: 'Carosa Drive Hub, Varanasi', tokenTime: 'Fri, 17 Oct 2025 — 06:45 PM' },
+        { title: 'Tata Indigo eCS LS CR4 BS-IV 2011', did: 'I416955602', sp: '₹1.60 Lakh', np: '₹1.52 Lakh', hub: 'Carosa Drive Hub, Varanasi', tokenTime: 'Sat, 18 Oct 2025 — 11:20 AM' },
+        { title: 'Tata Indigo eCS LS CR4 BS-IV 2011', did: 'I416955602', sp: '₹1.60 Lakh', np: '₹1.52 Lakh', hub: 'Carosa Drive Hub, Varanasi', tokenTime: 'Sat, 18 Oct 2025 — 03:05 PM' },
+      ],
+    };
+    let PROCUREMENT_ACTIVE_TAB = 'listing';
+    function renderProcurementTab(tab){
+      const data = PROCUREMENT_DATA[tab] || [];
+      if(tab === 'listing') return data.map(procurementListingCard).join('');
+      if(tab === 'bestoffer') return data.map(procurementBestOfferCard).join('');
+      if(tab === 'testdrive') return data.map(procurementTestDriveCard).join('');
+      if(tab === 'order') return data.map(procurementOrderCard).join('');
+      return '<div class="p-5 rounded-xl border bg-slate-50 text-[var(--c-muted)]">No items.</div>';
+    }
+    function procurementPage(){
+      return `
+        <div>
+          <h2 class="text-3xl font-extrabold mb-6">Procurement</h2>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <button class="px-4 py-2 rounded-xl border hover:bg-slate-50 ${PROCUREMENT_ACTIVE_TAB==='listing'?'bg-slate-900 text-white border-slate-900':''}" onclick="PROCUREMENT_ACTIVE_TAB='listing'; main.innerHTML=procurementPage();">Listing</button>
+            <button class="px-4 py-2 rounded-xl border hover:bg-slate-50 ${PROCUREMENT_ACTIVE_TAB==='bestoffer'?'bg-slate-900 text-white border-slate-900':''}" onclick="PROCUREMENT_ACTIVE_TAB='bestoffer'; main.innerHTML=procurementPage();">Best Offer</button>
+            <button class="px-4 py-2 rounded-xl border hover:bg-slate-50 ${PROCUREMENT_ACTIVE_TAB==='testdrive'?'bg-slate-900 text-white border-slate-900':''}" onclick="PROCUREMENT_ACTIVE_TAB='testdrive'; main.innerHTML=procurementPage();">Test Drive</button>
+            <button class="px-4 py-2 rounded-xl border hover:bg-slate-50 ${PROCUREMENT_ACTIVE_TAB==='order'?'bg-slate-900 text-white border-slate-900':''}" onclick="PROCUREMENT_ACTIVE_TAB='order'; main.innerHTML=procurementPage();">Order</button>
+          </div>
+          <div class="grid gap-6" id="procurement-list">
+            ${renderProcurementTab(PROCUREMENT_ACTIVE_TAB)}
+          </div>
+        </div>`;
+    }
+
+    
+    /* ===== BILLING & PAYMENT ===== */
+    
+function billingPage(){
+  const tabButtons = `
+    <div class="flex flex-wrap gap-2 mb-6">
+      <button id="tab-token" class="px-4 py-2 rounded-xl border bg-slate-900 text-white border-slate-900" onclick="showBillingTab('token')">Token Amount History</button>
+      <button id="tab-payout" class="px-4 py-2 rounded-xl border hover:bg-slate-50" onclick="showBillingTab('payout')">Payout History & Invoice</button>
+    </div>`;
+
+  const tokenTable = `
+    <div id="billing-token" class="card p-4 md:p-5">
+      <h3 class="text-lg font-bold mb-3">Token Amount History</h3>
+      <div class="overflow-auto rounded-lg border">
+        <table class="min-w-full text-sm">
+          <thead class="bg-slate-50 text-left">
+            <tr>
+              <th class="px-3 py-2">Date</th>
+              <th class="px-3 py-2">Car Details</th>
+              <th class="px-3 py-2">Reg. No.</th>
+              <th class="px-3 py-2">Listing ID</th>
+              <th class="px-3 py-2">Order ID</th>
+              <th class="px-3 py-2">Listing Price</th>
+              <th class="px-3 py-2">Token Amount Paid</th>
+              <th class="px-3 py-2">Transaction ID</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b last:border-0">
+              <td class="px-3 py-2">17 Oct 2025, 06:45 PM</td>
+              <td class="px-3 py-2">Tata Indigo eCS LS CR4 BS-IV 2011</td>
+              <td class="px-3 py-2">HR26CG1988</td>
+              <td class="px-3 py-2">I416955602</td>
+              <td class="px-3 py-2">O-2025-00087</td>
+              <td class="px-3 py-2">₹1.60 Lakh</td>
+              <td class="px-3 py-2 font-semibold">₹12,200</td>
+              <td class="px-3 py-2 text-slate-700">TXN-98KJ-7721</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>`;
+
+  const payoutTable = `
+    <div id="billing-payout" class="card p-4 md:p-5 hidden">
+      <h3 class="text-lg font-bold mb-3">Payout History & Invoice</h3>
+      <div class="overflow-auto rounded-lg border">
+        <table class="min-w-full text-sm">
+          <thead class="bg-slate-50 text-left">
+            <tr>
+              <th class="px-3 py-2">Payment Date</th>
+              <th class="px-3 py-2">Car Details</th>
+              <th class="px-3 py-2">Reg. No.</th>
+              <th class="px-3 py-2">Listing ID</th>
+              <th class="px-3 py-2">Order ID</th>
+              <th class="px-3 py-2">Token Amount</th>
+              <th class="px-3 py-2">Total Amount</th>
+              <th class="px-3 py-2 text-right">Invoice</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b last:border-0">
+              <td class="px-3 py-2">21 Oct 2025, 05:10 PM</td>
+              <td class="px-3 py-2">Tata Indigo eCS LS CR4 BS-IV 2011</td>
+              <td class="px-3 py-2">HR26CG1988</td>
+              <td class="px-3 py-2">I416955602</td>
+              <td class="px-3 py-2">O-2025-00087</td>
+              <td class="px-3 py-2">₹12,200</td>
+              <td class="px-3 py-2 font-semibold">₹1,52,000</td>
+              <td class="px-3 py-2 text-right">
+                <button class="px-3 py-1.5 rounded-md bg-[var(--c-primary)] text-white hover:opacity-95">Download Invoice</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>`;
+
+  return `<div><h2 class='text-3xl font-extrabold mb-6'>Billing & Payment</h2>${tabButtons}${tokenTable}${payoutTable}</div>`;
+}
+
+function showBillingTab(tab){
+  const tokenTab=document.getElementById('billing-token'); 
+  const payoutTab=document.getElementById('billing-payout');
+  const btnToken=document.getElementById('tab-token'); 
+  const btnPayout=document.getElementById('tab-payout');
+  if(tab==='token'){ 
+    tokenTab.classList.remove('hidden'); 
+    payoutTab.classList.add('hidden'); 
+    btnToken.classList.add('bg-slate-900','text-white','border-slate-900'); 
+    btnPayout.classList.remove('bg-slate-900','text-white','border-slate-900');
+  } else { 
+    payoutTab.classList.remove('hidden'); 
+    tokenTab.classList.add('hidden'); 
+    btnPayout.classList.add('bg-slate-900','text-white','border-slate-900'); 
+    btnToken.classList.remove('bg-slate-900','text-white','border-slate-900'); 
+  }
+}
+
+
+    function openInvoice(invId){
+      modalArea.innerHTML = `
+        <div class="modal-bg" onclick="if(event.target===this)closeModal()">
+          <div class="modal">
+            <div class="flex items-start justify-between gap-4 mb-3">
+              <h3 class="text-xl font-bold text-[var(--c-primary)]">Downloading ${invId}</h3>
+              <button onclick="closeModal()" class="px-3 py-1.5 border rounded-md">Close</button>
+            </div>
+            <p class="text-[var(--c-muted)]">Your invoice will be downloaded shortly. (Demo)</p>
+            <div class="flex justify-end mt-4">
+              <button onclick="closeModal()" class="px-4 py-2 rounded-md bg-[var(--c-primary)] text-white">OK</button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+    /* ===== NAV + MODALS + CHARTS ===== */
+    sidebar.addEventListener('click', (e) => {
+      const a = e.target.closest('a[data-page]'); if(!a) return; e.preventDefault();
+      sidebar.querySelectorAll('a').forEach(x => x.classList.remove('active-link')); a.classList.add('active-link');
+      const page = a.dataset.page;
+      if(page === 'dashboard'){ main.innerHTML=''; main.appendChild(dashboardSection); initKpiCounters(); setTimeout(initDashboardCharts, 150); }
+      else if(page === 'listing'){ main.innerHTML = listingPage(); }
+      else if(page === 'inspection'){ main.innerHTML = inspectionPage(); }
+      else if(page === 'bestoffer'){ main.innerHTML = bestOfferPage(); }
+      else if(page === 'testdrive'){ main.innerHTML = testDrivePage(); }
+      else if(page === 'orders'){ main.innerHTML = orderPage(); }
+      else if(page === 'procurement'){ main.innerHTML = procurementPage(); } else if(page === 'billing'){ main.innerHTML = billingPage(); }
+    });
+
+    function openDeactivate(){
+      modalArea.innerHTML = `
+        <div class="modal-bg" onclick="if(event.target===this)closeModal()">
+          <div class="modal text-center">
+            <h3 class="text-xl font-bold text-[var(--c-primary)] mb-4">Deactivate Listing</h3>
+            <p class="text-[var(--c-muted)] mb-6">Are you sure you want to deactivate this listing?</p>
+            <div class="flex justify-center gap-3">
+              <button onclick="closeModal()" class="px-4 py-2 border rounded-lg">Cancel</button>
+              <button onclick="closeModal()" class="px-4 py-2 bg-red-500 text-white rounded-lg">Deactivate</button>
+            </div>
+          </div>
+        </div>`;
+    }
+    function openUpdate(){
+      modalArea.innerHTML = `
+        <div class="modal-bg" onclick="if(event.target===this)closeModal()">
+          <div class="modal">
+            <h3 class="text-xl font-bold text-[var(--c-primary)] mb-4 text-center">Update Price</h3>
+            <div class="space-y-3 mb-4">
+              <label class="block text-sm font-medium">Listing Price</label>
+              <input type="text" value="₹1.5 Lakh" class="w-full border rounded-md px-3 py-2">
+              <label class="block text-sm font-medium">Offer Price</label>
+              <input type="text" value="₹1.5 Lakh" class="w-full border rounded-md px-3 py-2">
+            </div>
+            <div class="flex justify-center gap-3 mt-4">
+              <button onclick="closeModal()" class="px-4 py-2 border rounded-lg">Cancel</button>
+              <button onclick="closeModal()" class="px-4 py-2 bg-[var(--c-green)] text-white rounded-lg">Update</button>
+            </div>
+          </div>
+        </div>`;
+    }
+    function openRaise(){
+      modalArea.innerHTML = `
+        <div class="modal-bg" onclick="if(event.target===this)closeModal()">
+          <div class="modal text-center">
+            <h3 class="text-xl font-bold text-[var(--c-primary)] mb-4">Raise Inspection</h3>
+            <p class="text-[var(--c-muted)] mb-6">Redirecting to Scheduled Inspection...</p>
+            <button onclick="closeModal()" class="px-4 py-2 bg-[var(--c-green)] text-white rounded-lg">OK</button>
+          </div>
+        </div>`;
+    }
+    function openReraise(){
+      modalArea.innerHTML = `
+        <div class="modal-bg" onclick="if(event.target===this)closeModal()">
+          <div class="modal text-center">
+            <h3 class="text-xl font-bold text-[var(--c-primary)] mb-4">Re-raise Inspection</h3>
+            <p class="text-[var(--c-muted)] mb-6">Redirecting to Scheduled Inspection...</p>
+            <button onclick="closeModal()" class="px-4 py-2 bg-[var(--c-green)] text-white rounded-lg">OK</button>
+          </div>
+        </div>`;
+    }
+    function openDownload(){
+      modalArea.innerHTML = `
+        <div class="modal-bg" onclick="if(event.target===this)closeModal()">
+          <div class="modal text-center">
+            <h3 class="text-xl font-bold text-[var(--c-primary)] mb-4">Download Report</h3>
+            <p class="text-[var(--c-muted)] mb-6">Redirecting to Gateway...</p>
+            <button onclick="closeModal()" class="px-4 py-2 bg-[var(--c-green)] text-white rounded-lg">OK</button>
+          </div>
+        </div>`;
+    }
+    function openReport(){
+      modalArea.innerHTML = `
+        <div class="modal-bg" onclick="if(event.target===this)closeModal()">
+          <div class="modal">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h3 class="text-xl font-bold text-[var(--c-primary)] mb-1">Inspection Report Viewer</h3>
+                <p class="text-sm text-[var(--c-muted)] mb-3">Inspection ID: INSP-24356</p>
+              </div>
+              <div class="text-sm text-right">
+                <div class="text-xs text-[var(--c-muted)]">Vehicle ID</div>
+                <div class="font-semibold">I416955602</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:12px;margin-top:.6rem;">
+              <button class="page-btn" onclick="scrollReportTo('page1')">Page 1</button>
+              <button class="page-btn" onclick="scrollReportTo('page2')">Page 2</button>
+            </div>
+            <div class="report-scroll mt-4" id="report-scroll">
+              <section id="page1" style="padding:12px 8px;">
+                <h4 class="font-semibold">Inspection Summary</h4>
+                <p class="text-sm text-[var(--c-muted)] mb-2">Inspection ID: INSP-24356 | Date: 14 Oct 2025</p>
+                <div class="text-sm space-y-2">
+                  <p><strong>Inspector:</strong> Ramesh Sharma</p>
+                  <p><strong>Overall Status:</strong> Passed</p>
+                  <p><strong>Odometer:</strong> 72,000 km</p>
+                  <p><strong>Fuel:</strong> Diesel</p>
+                  <p><strong>Summary:</strong> All major checkpoints verified. Minor paint scratches on rear bumper.</p>
+                </div>
+              </section>
+              <hr style="border:none;height:8px;background:transparent;">
+              <section id="page2" style="padding:12px 8px;">
+                <h4 class="font-semibold">Detailed Checklist</h4>
+                <ul class="text-sm space-y-2 mt-2">
+                  <li><strong>Engine:</strong> OK — No leaks, smooth idle</li>
+                  <li><strong>Transmission:</strong> OK — No abnormal noise</li>
+                  <li><strong>Brakes:</strong> OK — Pads 60% remaining</li>
+                  <li><strong>Suspension:</strong> OK — No play detected</li>
+                  <li><strong>Electrical:</strong> OK — All lights & horn functional</li>
+                  <li><strong>Tyres:</strong> 4mm tread remaining (all)</li>
+                  <li><strong>Remarks:</strong> Small scratch on rear bumper; recommended touch-up</li>
+                </ul>
+              </section>
+            </div>
+            <div class="flex justify-end gap-2 mt-4">
+              <button onclick="closeModal()" class="px-3 py-1.5 border rounded-md">Close</button>
+            </div>
+          </div>
+        </div>`;
+      setTimeout(()=>{ const rs = document.getElementById('report-scroll'); if(rs){ rs.scrollTop = 0; } }, 50);
+    }
+    function scrollReportTo(id){
+      const rs = document.getElementById('report-scroll');
+      const el = document.getElementById(id);
+      if(!rs || !el) return;
+      rs.scrollTo({ top: el.offsetTop, behavior: 'smooth' });
+    }
+
+    function initKpiCounters(){
+      document.querySelectorAll('[data-count]').forEach(el => {
+        const target = +el.getAttribute('data-count') || parseInt(el.textContent.replace(/,/g,'')) || 0;
+        let cur = 0;
+        const step = Math.max(1, Math.round(target / 40));
+        const t = setInterval(() => {
+          cur += step;
+          if (cur >= target) { cur = target; clearInterval(t); }
+          el.textContent = cur.toLocaleString();
+        }, 25);
+      });
+    }
+    function initDashboardCharts(){
+      const gmvCtx = document.getElementById('gmvArea');
+      if(gmvCtx){
+        const gradient = gmvCtx.getContext('2d').createLinearGradient(0, 0, 0, 200);
+        gradient.addColorStop(0, 'rgba(12,58,137,.25)');
+        gradient.addColorStop(1, 'rgba(12,58,137,0)');
+        new Chart(gmvCtx, {
+          type: 'line',
+          data: {
+            labels: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+            datasets: [{
+              label: 'GMV',
+              data: [4.2, 4.6, 5.1, 4.9, 5.8, 6.2, 6.8],
+              fill: true,
+              backgroundColor: gradient,
+              borderColor: 'rgba(12,58,137,1)',
+              tension: .35,
+              pointRadius: 0
+            }]
+          },
+          options: {
+            plugins: { legend: { display: false } },
+            scales: { x: { grid: { display: false } }, y: { grid: { color: 'rgba(15,23,42,.06)' } } }
+          }
+        });
+      }
+      const donutCtx = document.getElementById('listingDonut');
+      if(donutCtx){
+        new Chart(donutCtx, {
+          type: 'doughnut',
+          data: {
+            labels: ['Active', 'Pending', 'Inspected', 'Inactive'],
+            datasets: [{
+              data: [54, 12, 26, 8],
+              backgroundColor: ['#86C73B', '#F28B18', '#0C3A89', '#94a3b8'],
+              borderWidth: 0
+            }]
+          },
+          options: { cutout: '62%', plugins: { legend: { display: false } } }
+        });
+      }
+    }
+
+    // Boot
+    initKpiCounters();
+    setTimeout(initDashboardCharts, 150);
+  </script>
+</body>
+</html>

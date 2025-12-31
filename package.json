@@ -1,0 +1,37 @@
+{
+  "name": "carosa-nextjs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "setup": "node setup-env.js"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.0.0",
+    "@fortawesome/fontawesome-svg-core": "^7.0.0",
+    "@fortawesome/free-brands-svg-icons": "^7.0.0",
+    "@fortawesome/free-regular-svg-icons": "^7.0.0",
+    "@fortawesome/free-solid-svg-icons": "^7.0.0",
+    "@fortawesome/react-fontawesome": "^0.2.3",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.7",
+    "moment": "^2.30.1",
+    "next": "15.5.7",
+    "react": "^19.1.1",
+    "react-bootstrap": "^2.10.10",
+    "react-dom": "^19.1.1",
+    "react-icons": "^5.5.0",
+    "react-loading-skeleton": "^3.5.0",
+    "socket.io-client": "^4.8.1",
+    "swiper": "^11.2.10",
+    "zustand": "^5.0.8"
+  },
+  "devDependencies": {
+    "@types/node": "25.0.3",
+    "eslint": "^9",
+    "eslint-config-next": "15.4.6"
+  }
+}

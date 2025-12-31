@@ -1,0 +1,46 @@
+[
+  {
+    "title": "Insurance & Protection",
+    "links": [
+      { "name": "Car Insurance", "href": "/carosa-care/insurance" },
+      { "name": "Extended Warranty", "href": "/carosa-care/extended-warranty" },
+      { "name": "Roadside Assistance (RSA)", "href": "/carosa-care/roadside-assistance" }
+    ]
+  },
+  {
+    "title": "Car Verification & History",
+    "links": [
+      { "name": "Check Car Details", "href": "/carosa-care/check-car-details" },
+      { "name": "Traffic Challan Check", "href": "/carosa-care/challan-check" },
+      { "name": "Vehicle History Report", "href": "/carosa-care/vehicle-history" },
+      { "name": "RTO Services", "href": "/carosa-care/rto-services" }
+    ]
+  },
+  {
+    "title": "Inspection & Evaluation",
+    "links": [
+      { "name": "Car Inspection & Valuation", "href": "/carosa-care/inspection-valuation" },
+      { "name": "Pre-Delivery Inspection (PDI)", "href": "/carosa-care/pdi" },
+      { "name": "Cost of Ownership Calculator", "href": "/carosa-care/ownership-calculator" }
+    ]
+  },
+  {
+    "title": "Car Care & Utilities",
+    "links": [
+      { "name": "Car Refurbishment", "href": "/carosa-care/refurbishment" },
+      { "name": "Scrap Your Old Car", "href": "/carosa-care/scrap-car" },
+      { "name": "FASTag Recharge", "href": "/carosa-care/fastag-recharge" }
+    ]
+  },
+  {
+    "title": "Driving & Learning",
+    "links": [
+      { "name": "Driving School", "href": "/carosa-care/driving-school" },
+      { "name": "Driving Safety Assistance", "href": "/carosa-care/driving-safety" },
+      { "name": "Learner's License Assistance", "href": "/carosa-care/learners-license" }
+    ]
+  }
+]
+
+
+

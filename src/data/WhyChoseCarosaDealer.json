@@ -1,0 +1,40 @@
+[
+  {
+    "id": 1,
+    "image": "/images/dealer1.png",
+    "title": "Direct Deals, Maximum Profit",
+    "description": "Connect with genuine, pre-verified buyers directly, ensuring you keep your margins without middleman cuts."
+  },
+  {
+    "id": 2,
+    "image": "/images/dealer2.png",
+    "title": "Streamlined Selling Process",
+    "description": "From listing your stock to final payment, Carosa handles inspections, buyer discussions, and paperwork so you can focus on sourcing and growing your business."
+  },
+  {
+    "id": 3,
+    "image": "/images/dealer3.png",
+    "title": "Partnership Built on Trust",
+    "description": "Transparent pricing, no hidden charges, and honest dealings for long-term business relationships."
+  },
+    {
+    "id": 4,
+    "image": "/images/dealer4.png",
+    "title": "Faster Inventory Turnaround",
+    "description": "Sell cars quicker and free up working capital with our active and competitive buyer base"
+  }
+  ,
+    {
+    "id": 5,
+    "image": "/images/dealer5.png",
+    "title": "Exclusive Dealer Support",
+    "description": "Dedicated account managers to assist with listings, promotions, and resolving queries instantly."
+  }
+  ,
+    {
+    "id": 6,
+    "image": "/images/dealer6.png",
+    "title": "Data-Driven Insights",
+    "description": "Access market trends and price intelligence to make better buying and selling decisions."
+  }
+]

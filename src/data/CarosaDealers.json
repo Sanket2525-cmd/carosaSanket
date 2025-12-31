@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Verified Buyer",
+        "image": "/assets/img/cercar.png",
+        "hoverImage": "https://i.ibb.co/BVZcjL3c/hoverimage.png",
+        "desc":"Fully authenticated and trustworthy"
+    },
+    {
+        "title": "Best Price Assurance",
+        "image": "/assets/img/rate.png",
+        "hoverImage": "/images/rate.png",
+        "desc":"Guaranteed highest selling value"
+    },
+    {
+        "title": "Instant Payment",
+         "image": "/images/phone.png",
+        "hoverImage": "/images/phonehover.png",
+        "desc":"Get paid on the spot"
+    },
+    {
+        "title": "Quick RC Transfer",
+        "image": "/images/transfer.png",
+        "hoverImage": "/images/transferhover.png",
+        "desc":"Hassle-free ownership change"
+    },
+    {
+        "title": "Lifetime Free Assitance",
+        "image": "/images/callback3.png",
+        "hoverImage": "/images/calls.png",
+        "desc":"Complete support throughout the process"
+    }
+]

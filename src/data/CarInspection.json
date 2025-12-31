@@ -1,0 +1,41 @@
+[
+  {
+    "vehicleHealth": "Engine & Transmission",
+    "points": 200,
+    "details": [
+      { "field": "Engine Condition", "status": "Good" },
+      { "field": "Transmission / Gearbox", "status": "Smooth" },
+      { "field": "Coolant & Fluid Levels", "status": "Proper" },
+      { "field": "Engine Mounts & Belts", "status": "Intact" }
+    ]
+  },
+  {
+    "vehicleHealth": "Exterior",
+    "points": 200,
+    "details": [
+      { "field": "Body Paint & Denting", "status": "Minor scratches" },
+      { "field": "Glass & Lights", "status": "All clear" },
+      { "field": "Bumpers & Panels", "status": "Aligned" },
+      { "field": "Rust & Underbody", "status": "Clean" }
+    ]
+  },
+  {
+    "vehicleHealth": "Interior",
+    "points": 200,
+    "details": [
+      { "field": "Dashboard & Electronics", "status": "All functional" },
+      { "field": "Seats & Upholstery", "status": "Clean" },
+      { "field": "Carpet & Roof Liner", "status": "Intact" },
+      { "field": "Safety Features", "status": "Working" }
+    ]
+  },
+  {
+    "vehicleHealth": "Tyres",
+    "points": 200,
+    "details": [
+      { "field": "Front Tyres (L/R)", "status": "L: 20% / R: 30%" },
+      { "field": "Rear Tyres (L/R)", "status": "L: 30% / R: 40%" },
+      { "field": "Spare Tyre", "status": "90%" }
+    ]
+  }
+]

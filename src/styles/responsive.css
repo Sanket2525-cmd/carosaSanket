@@ -1,0 +1,1472 @@
+:root {
+    --main-bg-color: #2E054E;
+    --content-text-color: #0F0F10;
+    --common-text-color: #FFFFFF;
+    --card-unique-color: #050B20;
+    --advance-text-color: #050B20;
+    --suport-color: #D8D8D8;
+    --litter-green: #8EC73E;
+    --country-bg-color: #FAFAFA;
+    --input-color: #6C757D;
+    --call-bg-color: #2A3A92;
+    --body-bg-color: #F4F7FF;
+    --rateing-bg-color: #00B67A;
+    --social-text-color: #717272;
+    --inspection-bg-color: #E3E3E3;
+    --inspactions-text-color: #555555CC;
+    --chat-bg-color: #EEEEEE;
+    --bg-danger-color: #ED1C53;
+    --waiting-bg-color: #FFDE33;
+}
+
+/* max-width */
+@media screen and (width <=1780px) {
+    .bookBtn .bookHere{
+        font-size: 10px !important;
+    }
+    .bestOffers .offerHere{
+        font-size: 10px !important;
+    }
+}
+@media (width <=768px) {
+    .awiperNew .swiper-horizontal{
+
+height: 100%;
+        padding-bottom: 10px;
+    }
+    .linearBox .home__bannerXp {
+        height: 600px !important;
+    }
+
+    .webMainTitle h1 {
+        font-size: 34px !important;
+    }
+    .customModal .modal-content{
+
+        height: auto;
+    }
+
+    .enter-registration-page {
+        max-height: 1103px !important;
+    }
+}
+
+@media(min-width:1599.99px){
+.chippyTopText{
+
+position: absolute;
+top: 18px;
+right: 56px;
+}
+.registration-info-section,.registration-form-section{
+
+    height: 580px !important;
+}
+}
+
+@media (min-width: 768px) and (max-width: 1033px) {
+    .enter-registration-page {
+        max-height: 1132px !important;
+    }
+    .option-btn{
+        width: 100% !important;
+    }
+}
+
+@media (width <=1200px) {
+    .sellBannerContant h1 {
+        font-size: 60px !important;
+    }
+
+    .padding-Y-X {
+        padding: 30px 10px !important;
+    }
+
+    .bannerContents p {
+        white-space: normal;
+        text-overflow: clip;
+        overflow: visible;
+
+    }
+
+    .bannerContents.dealerBanner h1 {
+        font-size: 75px !important;
+    }
+        .registration-info-section {
+        margin-bottom: 2rem !important;
+        padding-right: 0 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .dealers-main {
+        padding: 0.75rem;
+    }
+
+    .dealers-card {
+        padding: 1rem;
+    }
+
+    .dealers-dashboard h2 {
+        font-size: 1.5rem;
+    }
+
+    .enter-registration-page {
+        max-height: 1103px !important;
+    }
+
+    .registration-form {
+        min-height: 353px !important;
+    }
+
+    .registration-main-title.brand-main-title {
+        font-size: 1.5rem !important;
+    }
+    .bannerContents.dealerBanner h1{
+        font-size: 60px !important;
+    }
+}
+
+@media (width <=992px) {
+    .dealers-dashboard.padding-Y-X{
+
+
+        padding: 0px 17px !important;
+    
+    }
+    .navSearchInput{
+
+        display: none;
+    }
+    .padding-Y-X {
+        padding: 30px 10px !important;
+    }
+
+    .banner__biggerText {
+        font-size: 50px !important;
+    }
+
+    .topSpacing,.topSpacing2 {
+        margin-top: 76px !important;
+    }
+
+    /* .sticky__carShowcase {
+        position: sticky !important;
+        top: 0 !important;
+        padding-bottom: 53px !important;
+      } */
+      .slide-container img{
+        border-radius: 0px 12px 12px 0px !important;
+      }
+      .mobile-tabs-scroll{
+        border-radius: 12px 12px 0px 0px !important;
+      }
+      .ppsition-callBack{
+        position: fixed !important;
+        bottom: 74px;
+        right: 23px;
+        z-index: 10;
+
+      }
+      .outerPart{
+        width: 50px;
+        height: 50px;
+        border: 2px solid var(--litter-green) !important;
+      }
+      .phoneIcon{
+        background-color: var(--call-bg-color) !important;
+      }
+      .for__positioning{
+        top: -10px !important;
+      }
+}
+
+@media(max-width:1600px){
+    .titleStory p:nth-child(2),.titleStory p:first-child {
+  font-size: 14px !important;
+}
+    .procure-tab {
+
+        font-size: 14px !important;
+    }
+    .crnrImg-sx-th img{
+        width: 60%;
+    }
+    .setting__whishlist {
+           position: absolute;
+        top: 26px;
+        left: 27%;
+}
+.crnrImg-sx-th{
+
+    top: -18px;
+    right: -21px;
+}
+.customer_btn,.btn-kyc,.btn-orangebtn{
+
+    font-size: 12px !important;
+}
+    .profile-dropdown-header{
+
+        margin-bottom: 6px;
+        padding-bottom: 6px;
+    }
+    .profile-menu-item{
+
+        padding: 6px 8px !important; 
+       
+    }
+    .branding-img {
+
+  height: 250px !important;
+
+}
+.dealers-dashboard h2{
+
+    font-size: 16px !important;
+}
+.dealers-card .text-lg-end p{
+
+    font-size: 14px !important;
+}
+.listing-price, .listing-price strong {
+    color: #374151;
+    font-weight: 600;
+    font-size: 14px;
+}
+.dealers-btn-primary{
+    font-size: 14px;
+}
+.promoCard{
+
+    height: 150px !important;
+}
+.listing-btn{
+
+    font-size: 12px;
+}
+
+    .form-content-area {
+    width: 100%;
+    /* padding-top: 20px; */
+}
+    .fsizeSet{
+
+        font-size: 14px !important;
+    }
+    .card__inner p,.card__inner span,.yesORno {
+
+       
+        font-size: 12px !important; 
+    }
+    .fsizeSet2{
+        font-size: 14px !important;
+        text-align: center !important;
+    }
+    .aboutCarTab{
+
+        font-size: 12px !important;
+    }
+    .carType .button__selects{
+
+        font-size: 12px !important;
+    }
+    .upload_de{
+
+        height: 59px !important;
+    }
+    .heightSet{
+
+        height: 60px !important;
+    }
+    .registration-form.warranty{
+  min-height: 400px !important;
+}
+    .color-selection-container button{
+
+        font-size: 12px !important;
+    }
+    .searcher__field {
+
+    font-size: 14px;
+}
+    .option-btn{
+
+        font-size: 12px !important;
+    }
+    .brand-name{
+
+        font-size: 10px !important;
+    }
+    .registration-main-title{
+
+      font-size: 2rem !important;
+}
+
+.registration-subtitle {
+  font-size: 1.2rem !important;}
+    .newchoose .work-title{
+
+  font-size: 16px 
+}
+.registration-description {
+  font-size: 1rem !important;}
+.newchoose .work-desc{
+  font-size: 14px 
+}
+.chippyTopText p{
+
+    padding: 8px 18px !important;
+    font-size: 12px !important;
+}
+/* s */
+.form-card-title{
+    
+}
+}
+
+@media (min-width: 768px) and (max-width: 1600px) {
+    .carListId span,.shareFriend span{
+
+        font-size: 14px !important;
+    }
+    .car-showcase-container{
+
+        height: 420px !important;
+    }
+    .registration-container {
+
+  padding: 4rem 3rem 2rem 3rem !important;
+}
+  .buttonSide img{
+width: 37px !important;
+height: 37px !important;
+     }
+       .buttonSide span{
+
+        font-size: 11px !important;
+       }
+           .sticky__carShowcase .car-showcase-container .swiper-button-prev {
+      
+        left: 85% !important;
+    }
+        .buttonSide{
+            width: 70px;
+        }
+.chippyTopText{
+
+position: absolute;
+top: 18px;
+right: 56px;
+}
+.registration-info-section,.registration-form-section{
+
+    height: 450px !important;
+}
+.registration-form {
+    height: 392px !important;
+    padding: 1.5rem;
+}
+.enter-registration-page{
+
+    min-height: 600px !important;
+}
+.brand-grid {
+    height: 200px !important;
+    padding-right: 10px;
+    overflow-y: auto;
+}
+    .outerPart {
+    border: 2px solid var(--call-bg-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 32px;
+}
+.work-image-wrap2 img{
+
+  height: 120px;
+}
+.countryLists .dropdown-item{
+
+    font-size: 13px;
+}
+
+    .profile-name,
+    .signInBtn {
+        font-size: 12px !important;
+    }
+    .mega-menu a{
+
+        font-size: 14px !important;
+    }
+
+    .navLinkLists .nav-list .nav-items .nav-links {
+        font-size: 13px !important;
+    }
+
+    .mainLogo img {
+        width: 130px;
+    }
+    .report__chips.fSize-3{
+
+        font-size: 12px !important;
+    }
+    .in-peton-btn.fSize-4,.viewCarosaBisk .fSize-4{
+
+        font-size: 12px !important;
+    }
+    .navbar {
+    background: #fff;
+    border-radius: 50px;
+    top: 22px;
+    left: 60px;
+    right: 60px;
+    z-index: 999 !important;
+    position: fixed !important;
+}
+.featureimage{
+
+    height: 140px !important;
+}
+.cardMain.min_cardMain span{
+
+    font-size: 12px !important;
+}
+.mobile_fonts{
+
+font-size: 20px !important;
+}
+.padding-Y-X {
+    padding: 30px 50px !important;
+}
+.cardMain.min_cardMain p{
+
+font-size: 12px !important;
+}
+.cardMain.min_cardMain img{
+
+    height: 32px !important;
+}
+.cardMain.min_cardMain{
+
+    padding: 10px !important;
+}
+.cardMain.min_cardMain .fSize-5{
+
+    font-size: 12px;
+}
+
+    .cardMain.exploreCard p{
+
+        font-size: 14px !important;
+    }
+    .service-card-content span,.buy-now-btn{
+
+        font-size: 16px !important;
+    }
+    .accordion-header button h5.fSize-8{
+
+        font-size: 20px !important;
+    }
+    .hdTile.car-bharosa-title .fSize-11{
+
+        font-size: 30px !important;
+    }
+    .fSize-11.loan_font{
+
+ font-size: 30px !important;
+    }
+    .profile-avatar img {
+        width: 25px !important;
+        height: 25px !important;
+    }
+
+    .callBtn {
+        font-size: 12px !important;
+    }
+
+    .navLinkLists .nav-list .nav-items {
+        padding: 20px 0;
+    }
+
+    .bookBtn .buyBtn {
+        height: 60px;
+        font-size: 19px !important;
+
+    }
+
+    .imgcards {
+
+        height: 170px;
+        ;
+    }
+
+    .vehicleDetaile h4 {
+        font-size: 14px !important;
+    }
+
+    .vehicleDetaile p {
+        font-size: 12px !important;
+    }
+
+    .miles p,
+    .pump p,
+    .gear p,
+    .seater p,
+    .etc p {
+        font-size: 12px !important;
+    }
+
+    .map {
+
+        font-size: 14px;
+    }
+
+    .spaceLocation p {
+
+        font-size: 13px;
+    }
+
+    .storyCardParent .imagelyr img {
+
+        height: 350px;
+    }
+
+    .webMainTitle h1 {
+        font-size: 28px !important;
+    }
+
+    .sightingVideo img {
+        height: 250px !important;
+    }
+
+    .viewAll a {
+
+        font-size: 14px !important;
+    }
+
+    .pricingDetailes h4 {
+        font-size: 15px !important
+    }
+
+    .pricingDetailes .EMI-text {
+
+        font-size: 12px !important;
+    }
+
+    .pricingDetailes p svg {
+
+        width: 9px !important;
+        height: 14px !important;
+    }
+  
+}
+
+@media (width <=1400px) {
+    .mobile-drawer .accordion-item {
+        border: 0px !important;
+    }
+
+        .promoCard {
+        height: 132px !important;
+    }
+    /* .mobile-drawer .accordion-item button {
+        border-bottom: 1px solid var(--litter-green);
+        background-color: transparent !important;
+    } */
+
+    .accordion-button {
+  background: transparent !important;
+  box-shadow: none !important;
+  font-weight: 600 !important;
+  color: #000 !important;
+  font-size: 1rem !important;
+}
+
+.accordion-button::after {
+  filter: invert(0) !important; /* Keep arrow visible */
+}
+.px-0mobile button{
+
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    padding: 0 !important;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #000 !important;
+  background: transparent !important;
+}
+    .accordion-button:focus {
+        box-shadow: none !important;
+    }
+
+    .mobile-drawer .accordion-body {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        margin: 10px 0px;
+    }
+    .bookBtn .bookHere{
+        width: 100% !important;
+    }
+    .bestOffers .offerHere{
+        width: 100% !important;
+    }
+    .viewCarosaBisk span{
+        font-size: 12px !important;
+    }
+}
+
+
+
+@media (width <=617px) and (width >=590px) {
+    .bannerContents.dealerBanner h1 {
+        font-size: 60px !important;
+       
+    }
+}
+
+@media(min-width:591px){
+
+    .sticky__carShowcase .car-showcase-container .swiper-button-prev{
+
+           left: 87%;
+    /* bottom: 115% !important; */
+    top: 92%;
+    }
+     .sticky__carShowcase .car-showcase-container .swiper-button-next{
+
+ top: 92%;
+         right: 4%;
+     }
+}
+
+@media (width <=590px) {
+    .popup-box {
+
+        width: 100% !important;
+        right: 0;
+        min-width: 100%;
+        left: 0;
+
+}
+.fset_m{
+
+    font-size: 16px !important;
+}
+.fset_2{
+
+    font-size: 14px !important;
+}
+.fs12_s{
+
+    font-size: 12px !important;
+}
+.additional-costs-tooltip{
+
+    min-width: auto !important;
+    max-width: max-content !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 298px !important;
+}
+    .lead-popup-box {
+
+    padding: 60px 18px !important;}
+    .chippyTopText{
+
+        margin-bottom: 0 !important;
+        white-space: nowrap;
+        overflow-x: auto;
+    }
+     .chippyTopText > p{
+
+          white-space: nowrap;
+        overflow-x: auto;
+     }
+
+     .chippyTopText p{
+
+           margin-bottom: 0 !important;
+     }
+     .form-card-header{
+        padding: 10px !important;
+     }
+     .form-card-title{
+
+        margin-bottom: 0;
+        font-size: 16px !important;
+     }
+     .brand-grid.speciel_height_variant{
+
+    height: 140px !important;
+     }
+     .option-btn{
+
+        font-size: 10px !important;
+     }
+     .owners.rounded-circle{
+
+        width: 40px !important;
+        height: 40px !important;
+     }
+    .registration-form{
+      min-height: 350px !important;
+        height: 350px !important;
+        padding: 14px !important;
+        
+    }
+    .registration-form.warranty{
+          min-height: 350px !important;
+          height: 350px !important;
+          overflow-y: auto !important;
+    }
+        .heightSet {
+        height: 47px !important;
+    }
+    .upload_de{
+
+        height: 51px !important;
+    }
+    .photo-scroller{
+
+        height: 350px !important;
+    }
+    .mobilePaddingSet{
+
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .mbile_font {
+
+        font-size: 22px !important;
+    }
+    .heightAdded{
+
+        height: 220px !important;
+    }
+    .fs_set{
+
+        font-size: 16px !important;
+    }
+    .paddintMobiel{
+
+        padding-top: 70px !important;
+    }
+        
+    .registration-form.warranty .form-group{
+
+ margin-bottom: 10px !important;
+    }
+    .brand-grid{
+
+        height:490px !important;
+    }
+    .enter-registration-page {
+ 
+    min-height: 600px !important;}
+    .registration-subtitle,.registration-description{
+
+        display: none;
+    }
+    .nav-btn-next{
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-right: 40px !important;
+    }
+    .nav-btn-back,.nav-btn-next{
+
+        font-size: 14px !important;
+    }
+    .plate-input-container{
+
+        padding: 8px 10px !important;
+        font-size: 14px !important;
+    }
+    
+    .widthSet{
+
+        font-size: 22px ;
+        padding-bottom: 10px;
+    }
+    .mobileResponsive_lightbox{
+
+        top: -17px !important;
+    }
+    .CarImagesMobi{
+
+        width: 30px !important;
+        height: 30px !important;
+    }
+    .getCallBack{
+
+        position: fixed;
+        background-color: #fff;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 10px;
+        z-index: 52;
+        border-radius: 28px 28px 0px 0px !important;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+    .car-showcase-main img{
+
+        border-radius: 0px 10px 10px 0px !important;
+    }
+
+    .card__inner.mobile_res{
+
+        flex-direction: column !important;
+        gap: 7px !important;
+        justify-content: center;
+        text-align: center;
+    }
+    .carOverView.mobileResponsive .fSize-4 {
+
+        font-size: 14px !important;
+    }
+    /* .carOverView.mobileResponsive {
+
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+
+    .carOverView.mobileResponsive .card__inner{
+
+        flex-direction: column;
+        text-align: center;
+        gap: 5px !important;
+        padding-left: 0 !important;
+        
+    } */
+    .btn_notification.btn-primary, .btn_notification.btn-outline-primary {
+    width: 158px !important;
+}
+        .dv2-app {
+        padding-top: 44px !important;
+    }
+    .CarTabSelect .row .col-4:nth-child(2){
+
+           padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+ 
+      .branding-img {
+    height: 150px !important;
+    /* object-fit: contain !important; */
+    object-fit: fill !important;
+    background-color: #f8f8f8;
+  }
+  .listing-car-title{
+
+    font-size: 1rem !important;
+    padding-top: 10px !important;
+  }
+    .registration-main-title{
+
+        font-size: 22px !important;
+        display: none;
+    }
+    .listing-car-image{
+
+        height: 160px !important;
+    }
+    .dealers-main{
+
+        padding: 0 !important;
+    }
+    .listing-btn,.dealers-btn-primary{
+
+        font-size: 14px;
+    }
+    .registration-info-section{
+        margin-bottom: 10px !important;
+    }
+    .registration-info-section{
+        gap: 10px !important;
+    }
+    .registration-progress{
+
+        margin-top: 10px !important;
+    }
+    .registrationFormMain{
+
+        padding-top: 80px !important;
+    }
+    .bestOffers .offerHere.deactivateBtn{
+
+        margin-left: 0;
+    }
+    .work-card .work-image-wrap img{
+
+        height: 300px;
+        /* object-fit: contain; */
+    }
+    .navbar{
+
+        top: 0;
+        border-radius: 0;
+        width: 100%;
+        padding-right: 0 !important;
+        top: 0;
+        right: 0 !important;
+        padding-left: 5px !important;
+        left: 0 !important;
+    }
+    .carosaChose .work-image-wrap img{
+
+        height: 190px;
+    }
+     .navbar .container-fluid{
+
+        padding-right: 0 !important;
+     }
+         .topSpacing,.topSpacing2 {
+        margin-top: 60px !important;
+    }
+        .padding-Y-X {
+        padding: 10px 10px !important;
+    }
+    .car-showcase-container {
+
+        height: 250px !important;
+        margin-bottom: 25px;
+    }
+    .for__positioning2{
+
+        margin-top: 0;
+    }
+    .donut-chart-container {
+    width: 76px !important;
+    height: 200px;
+}
+.donut-chart-center-positioning {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50% !important;
+    transform: translate(42%, -50%) !important;
+}
+    .buttonSide{
+        overflow-y: auto;
+        overflow-x: hidden !important;
+        padding: 0 38px 0px 19px !important;
+        width: 114px;
+    }
+    .sellBannerContant h1 {
+        font-size: 50px !important;
+    }
+
+    .modalsBtns .carTabs {
+        padding: 7px 10px;
+        font-size: 12px !important;
+    }
+
+    .modalsBtns {
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+    }
+    .posSet{
+
+    top: 11% !important; 
+    right: 9px !important;
+    }
+
+    .modalTabsListsBtns .fSize-8 {
+        font-size: 18px !important;
+    }
+
+    .bannerContents.dealerBanner h1 {
+        font-size: 55px !important;
+     
+    }
+
+    .enter-registration-page {
+        max-height: 1528px !important;
+    }
+    .viewInspectionReportBtn{
+
+     
+       justify-content: flex-start !important;
+      
+       margin-top: 14px;
+    }
+     .viewInspectionReportBtn .in-peton-btn {
+
+ width: 100%;
+   text-align: center;
+     }
+     .mobile-tabs-scroll{
+
+        overflow: auto;
+        padding: 20px;
+     }
+     .inspectionSections .hdTile h6{
+
+        font-size: 23px !important;
+        padding-bottom: 10px;
+     }
+     .buttonSide img{
+width: 37px !important;
+height: 37px !important;
+     }
+       .buttonSide span{
+
+        font-size: 12px !important;
+       }
+     .aboutCar {
+        flex-wrap: wrap;
+        gap: 8px !important;
+    }
+     .mobileres{
+
+        flex-direction: column;
+     }
+     .viewCarosaBisk span{
+
+        font-size: 11px !important;
+     }
+     .mobi-2{
+
+        display: block !important;
+     }
+     .mobileres .report__chips{
+
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+     }
+     .mobilepostion{
+
+        position: fixed;
+        bottom: 75px;
+        right: 0;
+     }
+     .higlightsCarsCard  {
+
+        text-align: center;
+     }
+     .estimated-emi-value{
+
+        font-size: 22px !important;
+     }
+     
+}
+
+
+
+/* Mobile view: smaller height + full image visible */
+
+@media (width <=492px) {
+    .cardMain.exploreCard p{
+
+        font-size: 16px !important;
+    }
+    .font_checlist p{
+        font-size: 16px;
+    }
+    .bookBtn .bookHere,.bestOffers .offerHere{
+
+        font-size: 12px !important;
+    }
+
+    .aboutCarTab {
+
+        font-weight:  600 !important;
+    }
+    .sellBannerContant h1 {
+        font-size: 30px !important;
+    }
+
+    .bookBtn .buyBtn {
+        padding: 10px !important;
+        font-size: 16px !important;
+    }
+
+    .banner__biggerText {
+        font-size: 37px !important;
+    }
+
+    .linearBox .home__bannerXp {
+        height: 560px !important;
+    }
+
+    /* .brandingImages img {
+        height: 75px !important;
+        border-radius: 10px !important;
+    } */
+
+    .Branding.padding-Y-X{
+
+        padding-bottom: 5px !important;
+    }
+
+
+
+    .titles h1 {
+        font-size: 30px !important;
+    }
+
+    .titles p {
+
+        font-size: 15px !important;
+        font-weight: 400 !important;
+    }
+
+    .webMainTitle h1 {
+        font-size: 20px !important;
+    }
+
+    /* .recentlyViewCarHere {
+        margin-bottom: 35px !important;
+    } */
+
+    .viewAll img {
+        width: 9px !important;
+    }
+
+    .bannerHere img {
+        height: 670px !important;
+    }
+    .car-bharosa-title h6{
+        font-size: 29px !important;
+    }
+    .car-bharosa-title p{
+        font-size: 14px !important;
+    }
+    .searcher__field{
+        padding: 7px 0px 7px 30px !important;
+    }
+}
+
+@media (width <=492px) {
+    .plate-wrap {
+        padding: 5px 14px 5px 0px !important;
+    }
+
+    .priveBtn button {
+        width: 100% !important;
+    }
+
+    .priveBtn {
+        width: 100% !important;
+    }
+
+    .bookBtn.nextBtn {
+        width: 100% !important;
+    }
+
+    .bookBtn.nextBtn button {
+        width: 100% !important;
+    }
+
+    .carBody {
+        height: 345px !important;
+
+    }
+
+    .autoVideo video {
+        height: 270px !important;
+
+    }
+
+    .latestCard img {
+        height: 130px !important;
+    }
+
+    /* .cardBrands {
+        border: 1px solid var(--litter-green);
+        padding: 9px 10px 4px 10px;
+    } */
+
+    .sized-fav {
+
+        font-size: 14px !important;
+    }
+
+    .imagelyr img {
+
+        height: 280px;
+    }
+
+    .service-card-content span,
+    .buy-now-btn {
+
+        font-size: 16px !important;
+    }
+
+    .facilityCarosa button h5 {
+        font-size: 16px !important;
+    }
+
+    .sightingVideo img {
+        height: 160px !important;
+    }
+
+    .sellBannerMain .bannerHere img {
+        height: 810px !important;
+    }
+
+    .sellBannerContant h1 {
+        padding-bottom: 14px;
+    }
+
+    .locationToggle>div {
+
+        font-size: 12px;
+    }
+
+    .titles .fSize-11 {
+
+        font-size: 29px !important;
+    }
+
+    .viewBtn {
+        font-size: 12px !important;
+    }
+
+    .mobile-filter-title {
+
+        margin-bottom: 12px;
+    }
+
+    .bannerContents.dealerBanner h1 {
+        font-size: 40px !important;
+        margin-top: 30px;
+    }
+
+    .bannerContents.dealerBanner h1 span {
+        font-size: 30px !important;
+    }
+    .deliveryLocation {
+
+    /* flex-direction: column; */
+    align-items: flex-start !important;
+    gap: 21px;
+    }
+    .aboutCarTab {
+
+        font-size: 12px !important;
+    }
+    .PriceArea .fsSize-7-5{
+
+        font-size: 18px !important;
+    }
+    .carListId span{
+        font-size: 14px;
+    }
+}
+
+@media (width <=368px) {
+ 
+    .titles h2 {
+        font-size: 25px !important;
+    }
+
+    .titles p {
+        margin: 0px !important;
+    }
+
+    .modalsBtns .carTabs {
+        padding: 7px 10px;
+        font-size: 11px !important;
+    }
+
+    .profile-dropdown-container {
+        right: -30px !important;
+    }
+
+    .bannerContents.dealerBanner h1 {
+        font-size: 35px !important;
+        margin-top: 30px;
+    }
+
+    .loc_text p {
+        font-size: 15px;
+    }
+
+    .registration-description {
+        font-size: 16px !important;
+        gap: 10px !important;
+    }
+
+    .warraping {
+        flex-wrap: wrap;
+    }
+
+    .registration-left-actions,
+    .registration-right-actions {
+        width: 100%;
+    }
+    .option-btn{
+        width: 100% !important;
+    }
+
+}
+@media (min-width:1200px) {
+
+.carFilterMain {
+    min-height: 800px;
+    height: 800px;
+    overflow-y: auto;
+position: sticky !important;
+        top: 134px !important;
+        border-radius: 15px !important;
+}
+
+/* Chrome, Edge, Safari */
+.carFilterMain::-webkit-scrollbar {
+    width: 4px;   /* same as CARS24 */
+}
+
+/* Remove arrows */
+.carFilterMain::-webkit-scrollbar-button {
+    display: none !important;
+}
+
+/* Remove corner */
+.carFilterMain::-webkit-scrollbar-corner {
+    background: transparent !important;
+}
+
+/* CARS24 style track (fully transparent) */
+.carFilterMain::-webkit-scrollbar-track {
+    background: transparent !important;
+}
+
+/* CARS24 thin blue scrollbar */
+.carFilterMain::-webkit-scrollbar-thumb {
+    background: #2a3a92; /* blue color */
+    border-radius: 20px; /* smooth rounded */
+}
+
+}
+
+
+
+
+/* min-width */
+@media (min-width:1024px) {
+
+.sticy_postionSet {
+
+  position: sticky !important;
+  top: 147px !important;
+}
+}
+
+/* max-width and min-width */
+@media (768px <=width <=1200px) {}
+
+
+
+
+
+
+
+@media (max-width: 1024px) {
+    .dealers-dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    /* Mobile Sidebar Styles */
+    .dealers-sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 280px;
+        max-width: 85vw;
+        height: 100vh;
+        z-index: 1050;
+        transition: left 0.3s ease;
+        overflow-y: auto;
+        margin-top: 0;
+        border-radius: 0;
+        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .dealers-sidebar.sidebar-open {
+        left: 0;
+    }
+
+    .dealers-main {
+        padding: 1rem;
+        margin-top: 0;
+    }
+
+    /* Add padding top for mobile to account for fixed header */
+    .dealers-dashboard.padding-Y-X {
+        padding-top: 70px;
+    }
+
+    /* Dashboard Content Mobile Responsive */
+    .dashboard-content .dealers-card {
+        margin-bottom: 1rem;
+    }
+
+    /* Mobile specific font sizes - only affects mobile */
+    .dashboard-content h2 {
+        font-size: 1.5rem !important;
+    }
+    .dealers-nav {
+    flex-direction: column;
+    gap: 4px;
+    padding-top: 25px;
+    display: flex;
+}
+.dealers-sidebar-close {
+
+    position: absolute;
+    top: 0px;
+    right: 10px;
+     background: transparent;
+    border: 0;
+}
+.dealers-sidebar.sidebar-open{
+
+    border-radius: 0 !important;
+}
+    .dashboard-profile-img{
+        width: 36px !important;
+        height: 36px !important;
+    }
+
+    .dashboard-content h3 {
+        font-size: 1.1rem !important;
+    }
+
+    .dashboard-content h4 {
+        font-size: 1rem !important;
+    }
+
+    .dashboard-profile-img {
+        width: 48px !important;
+        height: 48px !important;
+    }
+
+    /* Mobile specific padding adjustments */
+    .dashboard-content .dealers-card.p-4 {
+        padding: 1rem !important;
+    }
+
+    /* Mobile: Stack welcome title and badges */
+    .dashboard-content .d-flex.align-items-center.gap-2.mb-2 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dashboard-content .d-flex.align-items-center.gap-2.mb-2 > .dealers-chip {
+        margin-top: 0.5rem;
+    }
+
+    /* Hide main header on mobile for dealer pages (mobile has its own header) */
+    /* .site-header.hide-on-mobile-dealer {
+        display: none;
+    } */
+}
+
+.mobile_header header{
+    display: none;
+}

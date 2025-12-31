@@ -1,0 +1,198 @@
+[
+    {
+        "id": "1",
+        "name": "Base",
+        "image": "https://i.ibb.co/LhR1XkQG/variant-resize.jpg",
+        "brandName": "Honda",
+        "modelName": "Jazz"
+    },
+    {
+        "id": "2", 
+        "name": "Mid",
+        "image": "https://i.ibb.co/LhR1XkQG/variant-resize.jpg",
+        "brandName": "Honda",
+        "modelName": "Jazz"
+    },
+    {
+        "id": "3",
+        "name": "Top",
+        "image": "https://i.ibb.co/LhR1XkQG/variant-resize.jpg",
+        "brandName": "Honda",
+        "modelName": "Jazz"
+    },
+    {
+        "id": "4",
+        "name": "Premium",
+        "image": "https://i.ibb.co/LhR1XkQG/variant-resize.jpg",
+        "brandName": "Honda",
+        "modelName": "Jazz"
+    },
+    {
+        "id": "5",
+        "name": "Base",
+        "image": "https://i.ibb.co/LhR1XkQG/variant-resize.jpg",
+        "brandName": "Honda",
+        "modelName": "City"
+    },
+    {
+        "id": "6",
+        "name": "Mid",
+        "image": "https://i.ibb.co/LhR1XkQG/variant-resize.jpg",
+        "brandName": "Honda",
+        "modelName": "City"
+    },
+    {
+        "id": "7",
+        "name": "Top",
+        "image": "https://i.ibb.co/LhR1XkQG/variant-resize.jpg",
+        "brandName": "Honda",
+        "modelName": "City"
+    },
+    {
+        "id": "8",
+        "name": "Premium",
+        "image": "https://i.ibb.co/LhR1XkQG/variant-resize.jpg",
+        "brandName": "Honda",
+        "modelName": "City"
+    },
+    {
+        "id": "9",
+        "name": "Base",
+        "image": "https://i.ibb.co/LhR1XkQG/variant-resize.jpg",
+        "brandName": "Honda",
+        "modelName": "Civic"
+    },
+    {
+        "id": "10",
+        "name": "Mid",
+        "image": "https://i.ibb.co/LhR1XkQG/variant-resize.jpg",
+        "brandName": "Honda",
+        "modelName": "Civic"
+    },
+    {
+        "id": "11",
+        "name": "Top",
+        "image": "https://i.ibb.co/LhR1XkQG/variant-resize.jpg",
+        "brandName": "Honda",
+        "modelName": "Civic"
+    },
+    {
+        "id": "12",
+        "name": "Premium",
+        "image": "https://i.ibb.co/LhR1XkQG/variant-resize.jpg",
+        "brandName": "Honda",
+        "modelName": "Civic"
+    },
+    {
+        "id": "13",
+        "name": "Base",
+        "image": "https://i.ibb.co/LhR1XkQG/variant-resize.jpg",
+        "brandName": "Audi",
+        "modelName": "A3"
+    },
+    {
+        "id": "14",
+        "name": "Mid",
+        "image": "https://i.ibb.co/LhR1XkQG/variant-resize.jpg",
+        "brandName": "Audi",
+        "modelName": "A3"
+    },
+    {
+        "id": "15",
+        "name": "Top",
+        "image": "https://i.ibb.co/LhR1XkQG/variant-resize.jpg",
+        "brandName": "Audi",
+        "modelName": "A3"
+    },
+    {
+        "id": "16",
+        "name": "Premium",
+        "image": "https://i.ibb.co/LhR1XkQG/variant-resize.jpg",
+        "brandName": "Audi",
+        "modelName": "A3"
+    },
+    {
+        "id": "17",
+        "name": "Base",
+        "image": "https://i.ibb.co/LhR1XkQG/variant-resize.jpg",
+        "brandName": "Audi",
+        "modelName": "A4"
+    },
+    {
+        "id": "18",
+        "name": "Mid",
+        "image": "https://i.ibb.co/LhR1XkQG/variant-resize.jpg",
+        "brandName": "Audi",
+        "modelName": "A4"
+    },
+    {
+        "id": "19",
+        "name": "Top",
+        "image": "https://i.ibb.co/LhR1XkQG/variant-resize.jpg",
+        "brandName": "Audi",
+        "modelName": "A4"
+    },
+    {
+        "id": "20",
+        "name": "Premium",
+        "image": "https://i.ibb.co/LhR1XkQG/variant-resize.jpg",
+        "brandName": "Audi",
+        "modelName": "A4"
+    },
+    {
+        "id": "21",
+        "name": "Base",
+        "image": "https://i.ibb.co/LhR1XkQG/variant-resize.jpg",
+        "brandName": "BMW",
+        "modelName": "3 Series"
+    },
+    {
+        "id": "22",
+        "name": "Mid",
+        "image": "https://i.ibb.co/LhR1XkQG/variant-resize.jpg",
+        "brandName": "BMW",
+        "modelName": "3 Series"
+    },
+    {
+        "id": "23",
+        "name": "Top",
+        "image": "https://i.ibb.co/LhR1XkQG/variant-resize.jpg",
+        "brandName": "BMW",
+        "modelName": "3 Series"
+    },
+    {
+        "id": "24",
+        "name": "Premium",
+        "image": "https://i.ibb.co/LhR1XkQG/variant-resize.jpg",
+        "brandName": "BMW",
+        "modelName": "3 Series"
+    },
+    {
+        "id": "25",
+        "name": "Base",
+        "image": "https://i.ibb.co/LhR1XkQG/variant-resize.jpg",
+        "brandName": "BMW",
+        "modelName": "5 Series"
+    },
+    {
+        "id": "26",
+        "name": "Mid",
+        "image": "https://i.ibb.co/LhR1XkQG/variant-resize.jpg",
+        "brandName": "BMW",
+        "modelName": "5 Series"
+    },
+    {
+        "id": "27",
+        "name": "Top",
+        "image": "https://i.ibb.co/LhR1XkQG/variant-resize.jpg",
+        "brandName": "BMW",
+        "modelName": "5 Series"
+    },
+    {
+        "id": "28",
+        "name": "Premium",
+        "image": "https://i.ibb.co/LhR1XkQG/variant-resize.jpg",
+        "brandName": "BMW",
+        "modelName": "5 Series"
+    }
+]

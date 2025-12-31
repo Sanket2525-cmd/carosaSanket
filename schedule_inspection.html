@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Schedule Inspection</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --primary-blue: #0C3A89;
+      --green-accent: #86C73B;
+      --orange-cta: #F28B18;
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --muted:#6b7280;
+    }
+    body{font-family:'Montserrat',sans-serif;background:var(--bg);margin:0;padding:40px;color:#111;text-align:center}
+    .trigger{background:var(--primary-blue);color:#fff;padding:10px 20px;border-radius:8px;cursor:pointer;font-weight:600;border:none}
+
+    .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.45);display:none;align-items:center;justify-content:center;z-index:1000}
+    .modal{width:420px;max-width:90%;background:var(--card);border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,0.2);overflow:hidden;padding:18px;display:flex;flex-direction:column;gap:10px;}
+
+    .modal h3{color:var(--primary-blue);margin:0;text-align:center;font-weight:700;font-size:18px;}
+    label{font-weight:600;color:var(--primary-blue);text-align:left;display:block;margin-top:8px;font-size:13px;}
+    .address-group{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+    .input-field{width:100%;padding:8px;border:1px solid #ccc;border-radius:6px;font-family:'Montserrat';font-size:13px;}
+    .btn{padding:10px 14px;border-radius:8px;cursor:pointer;font-weight:700;border:none;font-size:14px;}
+    .btn.comp{background:linear-gradient(90deg,var(--primary-blue),#0b2e66);color:#fff;margin-top:10px}
+  </style>
+</head>
+<body>
+  <button class="trigger" id="openSchedule">Schedule Inspection</button>
+
+  <div class="modal-backdrop" id="scheduleModal">
+    <div class="modal" role="dialog" aria-modal="true">
+      <h3>Schedule Inspection</h3>
+
+      <label>Address</label>
+      <div class="address-group">
+        <input type="text" id="flat" class="input-field" placeholder="Flat/Building Name">
+        <input type="text" id="area" class="input-field" placeholder="Area & Locality">
+        <input type="text" id="landmark" class="input-field" placeholder="Landmark">
+        <input type="text" id="pincode" maxlength="6" class="input-field" placeholder="Pincode">
+        <input type="text" id="city" class="input-field" placeholder="City" readonly>
+        <input type="text" id="state" class="input-field" placeholder="State" readonly>
+      </div>
+
+      <label>Select Date & Time</label>
+      <input type="datetime-local" class="input-field" id="datetime">
+
+      <button class="btn comp" id="confirmSchedule">Confirm Schedule</button>
+    </div>
+  </div>
+
+  <script>
+    const modal=document.getElementById('scheduleModal');
+    document.getElementById('openSchedule').addEventListener('click',()=>{modal.style.display='flex'});
+    modal.addEventListener('click',e=>{if(e.target===modal)modal.style.display='none'});
+
+    const pincodeData={
+      '110001':{city:'New Delhi',state:'Delhi'},
+      '400001':{city:'Mumbai',state:'Maharashtra'},
+      '560001':{city:'Bengaluru',state:'Karnataka'},
+      '600001':{city:'Chennai',state:'Tamil Nadu'},
+      '700001':{city:'Kolkata',state:'West Bengal'}
+    };
+
+    document.getElementById('pincode').addEventListener('input',(e)=>{
+      const pin=e.target.value.trim();
+      if(pincodeData[pin]){
+        document.getElementById('city').value=pincodeData[pin].city;
+        document.getElementById('state').value=pincodeData[pin].state;
+      }else if(pin.length===6){
+        document.getElementById('city').value='';
+        document.getElementById('state').value='';
+      }
+    });
+
+    document.getElementById('confirmSchedule').addEventListener('click',()=>{
+      const city=document.getElementById('city').value;
+      const state=document.getElementById('state').value;
+      if(!city||!state){
+        alert('Please enter a valid pincode to auto-fill city and state.');
+        return;
+      }
+      alert('Your inspection has been scheduled successfully!');
+      modal.style.display='none';
+    });
+  </script>
+</body>
+</html>

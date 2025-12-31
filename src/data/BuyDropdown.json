@@ -1,0 +1,53 @@
+
+
+[
+    {
+        "title": "By Segment",
+        "links": [
+            { "name": "Mid-Range Cars", "href": "/used-cars/segment/mid-range" },
+            { "name": "Luxury Cars", "href": "/used-cars/segment/luxury" }
+        ]
+    },
+    {
+        "title": "By Body Type",
+        "links": [
+            { "name": "Hatchback", "href": "/used-cars/body/hatchback" },
+            { "name": "Sedan", "href": "/used-cars/body/sedan" },
+            { "name": "SUV", "href": "/used-cars/body/suv" }
+        ]
+    },
+    {
+        "title": "By Budget",
+        "links": [
+            { "name": "Under 2 Lakh", "href": "/used-cars/price/under-2-lakh" },
+            { "name": "Under 5 Lakh", "href": "/used-cars/price/under-5-lakh" },
+            { "name": "Under 10 Lakh", "href": "/used-cars/price/under-10-lakh" },
+            { "name": "Above 10 Lakh", "href": "/used-cars/price/above-10-lakh" }
+        ]
+    },
+    {
+        "title": "By Fuel Type",
+        "links": [
+            { "name": "Petrol", "href": "/used-cars/fuel/petrol" },
+            { "name": "Diesel", "href": "/used-cars/fuel/diesel" },
+            { "name": "CNG", "href": "/used-cars/fuel/cng" }
+        ]
+    },
+    {
+        "title": "By Transmission",
+        "links": [
+            { "name": "Automatic", "href": "/used-cars/transmission/automatic" },
+            { "name": "Manual", "href": "/used-cars/transmission/manual" }
+        ]
+    }
+    ,
+    {
+        "title": "By Years",
+        "links": [
+            { "name": "2019 & above", "href": "/used-cars/year/2019-and-above" },
+            { "name": "2014 & above", "href": "/used-cars/year/2014-and-above" },
+            { "name": "2009 & above", "href": "/used-cars/year/2009-and-above" },
+            { "name": "2005 & above", "href": "/used-cars/year/2005-and-above" }
+        ]
+    }
+]

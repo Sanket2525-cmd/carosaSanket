@@ -1,0 +1,32 @@
+[
+    {
+        "image": "https://i.ibb.co/bgrjw4g0/suv-jpg.png",
+        "available":3,
+        "types":"SUV"
+    },
+     {
+        "image": "https://i.ibb.co/BHP8bVVK/h72-jpg.png",
+        "available":7,
+        "types":"Sedan"
+    },
+     {
+        "image": "https://i.ibb.co/RGxw2snB/h73-jpg.png",
+        "available":16,
+        "types":"Hatchback"
+    },
+     {
+        "image": "https://i.ibb.co/JWbX0N26/h74-jpg.png",
+        "available":0,
+        "types":"Hybrid"
+    },
+     {
+        "image": "https://i.ibb.co/1Ghn3Tjq/h75-jpg.png",
+        "available":3,
+        "types":"Convertible"
+    },
+     {
+        "image": "https://i.ibb.co/1Ghn3Tjq/h75-jpg.png",
+        "available":3,
+        "types":"Convertible"
+    }
+]

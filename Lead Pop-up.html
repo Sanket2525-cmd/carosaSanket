@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Carosa Website</title>
+    
+
+  </head>
+    
+  <body>
+  <div id="carosaLeadPopup" class="popup-overlay">
+  <div class="popup-box">
+    
+    <span class="close-btn" onclick="closePopup()">×</span>
+
+    <h2 class="title">Looking to Buy a Car?</h2>
+    <p class="subtitle">
+      Get **100% verified cars** with inspection, warranty & doorstep delivery.  
+      Share your details and our expert will reach out within minutes!
+    </p>
+
+    <form class="popup-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="tel" placeholder="Mobile Number" required>
+      <input type="text" placeholder="Preferred Car (e.g., Creta, Swift)" required>
+      <select required>
+        <option value="">Budget Range</option>
+        <option>₹2–4 Lakh</option>
+        <option>₹4–7 Lakh</option>
+        <option>₹7–12 Lakh</option>
+        <option>₹12–20 Lakh</option>
+        <option>₹20 Lakh+</option>
+      </select>
+
+      <button type="submit" class="cta-btn">Get Best Deals Now</button>
+    </form>
+
+    <p class="trusted-tag">
+      ✔ Trusted by 10,000+ Buyers • 100% Genuine Cars • No Hidden Charges
+    </p>
+
+  </div>
+</div>
+
+<style>
+  .popup-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .popup-box {
+    background: #fff;
+    width: 90%;
+    max-width: 420px;
+    padding: 35px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    animation: popIn 0.35s ease-out;
+  }
+
+  @keyframes popIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #333;
+  }
+
+  .title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0C3A89; /* Carosa Blue */
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  .popup-form input,
+  .popup-form select {
+    width: 100%;
+    padding: 12px 14px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    outline: none;
+  }
+
+  .cta-btn {
+    background: #F28B18; /* Carosa Orange */
+    color: #fff;
+    padding: 14px;
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+  }
+
+  .cta-btn:hover {
+    background: #d67614;
+  }
+
+  .trusted-tag {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #86C73B; /* Green Accent */
+    font-weight: 600;
+  }
+</style>
+
+<script>
+  function closePopup() {
+    document.getElementById("carosaLeadPopup").style.display = "none";
+  }
+</script>
+    
+  </body>
+  
+</html>

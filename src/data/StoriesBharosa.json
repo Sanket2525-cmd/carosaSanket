@@ -1,0 +1,26 @@
+[
+    {
+        "image": "/images/story1.jpg",
+        "userName": "Amit Khanna ",
+        "state": "South Delhi",
+        "storiesTitle": "Bought my Honda City here — smooth process, transparent pricing, and quick delivery. Feels great to finally trust a used car brand!"
+    },
+     {
+        "image": "/images/story2.jpg",
+        "userName": "Ananya Gupta",
+        "state": "Lajpat Nagar, Delhi",
+        "storiesTitle": "Loved how professional the team was. Every detail was shared clearly — no hidden surprises, just honest service."
+    },
+     {
+        "image": "/images/story3.jpg",
+        "userName": "Saurabh Bansal ",
+        "state": "Rohini, Delhi",
+        "storiesTitle": "Carosa made everything easy — from test drive to paperwork. Got my Kia Saltos in top shape and on time."
+    },
+     {
+        "image": "/images/story4.jpg",
+        "userName": "Ritu Mehra",
+        "state": "Dwarka, Delhi",
+        "storiesTitle": "The inspection report and condition were exactly as shown. Great staff and doorstep delivery — totally hassle-free."
+    }
+]

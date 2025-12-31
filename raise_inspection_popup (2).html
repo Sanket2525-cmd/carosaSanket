@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Raise Inspection — Popup</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --primary-blue: #0C3A89;
+      --green-accent: #86C73B;
+      --orange-cta: #F28B18;
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --muted:#6b7280;
+    }
+    body{font-family:'Montserrat',sans-serif;background:var(--bg);margin:0;padding:40px;color:#111}
+    .trigger{background:var(--primary-blue);color:#fff;padding:12px 18px;border-radius:10px;cursor:pointer;font-weight:600;border:none}
+
+    .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;align-items:center;justify-content:center;z-index:1000}
+    .modal{width:700px;max-width:95%;background:var(--card);border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,0.2);overflow:hidden}
+
+    .modal-header{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:#f1f4f8;border-bottom:1px solid #ddd;font-weight:700;color:var(--primary-blue)}
+    .modal-header div{flex:1;text-align:center;}
+
+    .modal-body{padding:24px;color:#111}
+    table{width:100%;border-collapse:collapse;font-size:15px}
+    th,td{text-align:center;padding:12px;border-bottom:1px solid #eee}
+    th:first-child,td:first-child{text-align:left}
+    th{background:#f9fafb;color:var(--primary-blue)}
+    td.tick{color:var(--green-accent);font-weight:700}
+    td.cross{color:var(--orange-cta);font-weight:700}
+
+    .footer{display:flex;justify-content:center;gap:16px;padding:16px;border-top:1px solid #eee}
+    .btn{padding:12px 18px;border-radius:10px;cursor:pointer;font-weight:700;border:none}
+    .btn.basic{background:#fff;color:var(--primary-blue);border:1px solid #dbe7ff}
+    .btn.comp{background:linear-gradient(90deg,var(--primary-blue),#0b2e66);color:#fff}
+
+    /* Payment Popup */
+    .payment-modal,.schedule-modal{width:500px;max-width:90%;background:var(--card);border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,0.2);overflow:hidden;padding:20px;display:none;flex-direction:column;gap:20px;}
+    .payment-modal h3,.schedule-modal h3{color:var(--primary-blue);margin:0 0 10px;font-weight:700;text-align:center;}
+    .input-field{width:100%;padding:10px;border:1px solid #ccc;border-radius:8px;font-family:'Montserrat'}
+  </style>
+</head>
+<body>
+  <button class="trigger" id="openBtn">Raise Inspection</button>
+
+  <div class="modal-backdrop" id="modal">
+    <div class="modal" role="dialog" aria-modal="true">
+    
+      <div class="modal-body">
+        <table>
+          <thead class="modal-header">
+            <tr>
+              <th>Components</th>
+              <th>Basic</th>
+              <th>Comprehensive</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+
+            </tr>
+            <tr>
+              <td>Vehicle Basic Details</td>
+              <td class="tick">✓</td>
+              <td class="tick">✓</td>
+            </tr>
+            <tr><td>Engine & Transmission</td><td class="tick">✓</td><td class="tick">✓</td></tr>
+            <tr><td>Exterior Body & Tyres</td><td class="tick">✓</td><td class="tick">✓</td></tr>
+            <tr><td>Brakes & Suspension</td><td class="tick">✓</td><td class="tick">✓</td></tr>
+            <tr><td>Interior & Electrical</td><td class="tick">✓</td><td class="tick">✓</td></tr>
+            <tr><td>AC & Cooling</td><td class="tick">✓</td><td class="tick">✓</td></tr>
+            <tr><td>Lights & Battery</td><td class="tick">✓</td><td class="tick">✓</td></tr>
+            <tr><td>Challan History</td><td class="cross">✕</td><td class="tick">✓</td></tr>
+            <tr><td>Legal History Details</td><td class="cross">✕</td><td class="tick">✓</td></tr>
+            <tr><td>Refurbishment Cost</td><td class="cross">✕</td><td class="tick">✓</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="footer">
+        <button class="btn basic" id="basicPay">Rate Car - Basic ₹499</button>
+        <button class="btn comp" id="compPay">Rate Car - Comprehensive ₹999</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Payment Modal -->
+  <div class="modal-backdrop" id="paymentModal">
+    <div class="payment-modal" id="paymentBox">
+      <h3>Demo Payment Gateway</h3>
+      <p style="text-align:center;color:var(--muted)">Enter demo card details to simulate payment.</p>
+      <input type="text" placeholder="Card Number: 4111 1111 1111 1111" class="input-field">
+      <input type="text" placeholder="Expiry: 12/28" class="input-field">
+      <input type="text" placeholder="CVV: 123" class="input-field">
+      <button class="btn comp" id="confirmPay">Confirm Payment</button>
+    </div>
+  </div>
+
+  <!-- Schedule Modal -->
+  <div class="modal-backdrop" id="scheduleModal">
+    <div class="schedule-modal" id="scheduleBox">
+      <h3>Schedule Inspection</h3>
+      <label>Address (for Comprehensive Inspection)</label>
+      <textarea class="input-field" rows="3" placeholder="Enter address for inspection"></textarea>
+      <label>Select Date & Time</label>
+      <input type="datetime-local" class="input-field">
+      <button class="btn comp">Confirm Schedule</button>
+    </div>
+  </div>
+
+  <script>
+    const modal=document.getElementById('modal');
+    const paymentModal=document.getElementById('paymentModal');
+    const scheduleModal=document.getElementById('scheduleModal');
+
+    document.getElementById('openBtn').addEventListener('click',()=>{modal.style.display='flex'});
+    modal.addEventListener('click',e=>{if(e.target===modal)modal.style.display='none'});
+
+    document.getElementById('basicPay').addEventListener('click',()=>{
+      modal.style.display='none';
+      paymentModal.style.display='flex';
+    });
+
+    document.getElementById('compPay').addEventListener('click',()=>{
+      modal.style.display='none';
+      paymentModal.style.display='flex';
+    });
+
+    paymentModal.addEventListener('click',e=>{if(e.target===paymentModal)paymentModal.style.display='none'});
+
+    document.getElementById('confirmPay').addEventListener('click',()=>{
+      paymentModal.style.display='none';
+      alert('Payment Successful!');
+      const scheduleBtn=document.createElement('button');
+      scheduleBtn.textContent='Schedule Inspection';
+      scheduleBtn.className='trigger';
+      scheduleBtn.onclick=()=>{scheduleModal.style.display='flex'};
+      document.body.appendChild(scheduleBtn);
+    });
+
+    scheduleModal.addEventListener('click',e=>{if(e.target===scheduleModal)scheduleModal.style.display='none'});
+  </script>
+</body>
+</html>
