@@ -2234,3 +2234,931 @@ border: 1px solid #E5E5E5;
     font-size: 22px;
   }
 }
+
+
+
+
+/*=======Check-car-details====*/
+
+/* ================= COMMON ================= */
+
+.breadcrumb-nav,
+.reg-text,
+.rc-status {
+  font-size: 14px;
+  color: #1f2937;
+}
+
+/* ================= BREADCRUMB ================= */
+
+.car-breadcrumb {
+  background: #eef9ff;
+  padding: 14px 0;
+  margin-top: 100px;
+}
+
+.breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.breadcrumb-nav .sep {
+  color: #6b7280;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.breadcrumb-nav .active {
+  font-weight: 500;
+}
+
+@media (max-width: 576px) {
+  .breadcrumb-nav {
+    font-size: 13px;
+    flex-wrap: wrap;
+  }
+}
+
+/* ================= CARD SECTION ================= */
+
+.page-bg {
+  background: #ffffff;
+  padding-top: 40px;
+  padding-bottom: 100px;
+}
+
+.car-card {
+  background: #ffffff;
+  border: 1px solid #ececec;
+  border-radius: 18px;
+  padding: 22px 26px;
+}
+
+.car-img {
+  background: #f3fbff;
+  border-radius: 14px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reg-text {
+  color: #6b7280;
+}
+
+/* ✅ FINAL & CORRECT COLOR */
+.car-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0C3E8B;
+}
+
+.rc-status {
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  padding: 8px 18px;
+  white-space: nowrap;
+}
+
+@media (max-width: 576px) {
+  .car-title {
+    font-size: 18px;
+  }
+}
+
+
+
+
+
+
+/* ================= SPACING ================= */
+.mt-60 {
+  margin-top: 60px;
+}
+
+/* ================= SECTION ================= */
+.challan-section {
+  background: #eef9ff;
+  padding: 60px 0;
+}
+
+/* ================= TITLE ================= */
+.challan-title {
+  font-weight: 800;
+  font-size: 42px;
+  line-height: 1.2;
+  color: #0c3e8b;
+}
+
+.challan-title span {
+  color: #7ac943;
+}
+
+/* ================= DESCRIPTION ================= */
+.challan-desc {
+  margin: 16px 0 24px;
+  max-width: 520px;
+  color: #4b5563;
+}
+
+/* ================= FORM BOX ================= */
+.challan-box {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  max-width: 420px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* ================= LABEL ================= */
+.vehicle-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #000000; /* BLACK */
+}
+
+/* ================= INPUT ================= */
+.form-control {
+  padding: 12px;
+}
+
+/* ================= BUTTON ================= */
+.challan-btn {
+  background: #f7941d;
+  color: #ffffff;
+  padding: 12px;
+  font-weight: 600;
+  border-radius: 30px;
+  border: none;
+}
+
+.challan-btn:hover {
+  background: #e5830c;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .challan-title {
+    font-size: 32px;
+  }
+}
+
+
+
+
+/* ================= CHALLAN REPORT SECTION ================= */
+
+.challan-report-section {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+/* ================= HEADING ================= */
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #0c3e8b;
+}
+
+.section-title span {
+  color: #7ac943;
+}
+
+.section-desc {
+  max-width: 620px;
+  margin: 12px auto 0;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* ================= CARD ================= */
+
+.report-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.report-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+}
+
+/* ================= ICON ================= */
+
+.icon-box {
+  width: 48px;
+  height: 48px;
+  background: #eef9ff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+/* ================= TEXT ================= */
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #111827;
+}
+
+.card-desc {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 0;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 26px;
+  }
+}
+
+
+
+
+/* ================= WHY CHALLAN SECTION ================= */
+
+.why-challan-section {
+  background: #ffffff;
+}
+
+/* Heading */
+.why-title {
+  font-size: 32px;
+  color: #0c3e8b;
+}
+
+.why-title span {
+  color: #7ac943;
+}
+
+.why-desc {
+  color: #6b7280;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+/* Info Boxes */
+.info-box {
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  border-radius: 12px;
+  padding: 22px;
+}
+
+.info-icon {
+  margin-bottom: 14px;
+}
+
+.info-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.info-desc {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 0;
+}
+
+/* Right Card */
+.challan-card {
+  background: #eef9ff;
+  border-radius: 18px;
+  padding: 32px;
+}
+
+.challan-heading {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0c3e8b;
+}
+
+.challan-heading span {
+  color: #7ac943;
+}
+
+.challan-btn {
+  background: #f59e0b;
+  color: #ffffff;
+  padding: 8px 22px;
+  border-radius: 20px;
+  font-size: 14px;
+  border: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .challan-card {
+    margin-top: 20px;
+  }
+
+  .why-title {
+    font-size: 26px;
+  }
+}
+
+
+
+
+/* ================= WHY CHOOSE CAROSA ================= */
+
+.why-carosa-section {
+  background: #ffffff;
+}
+
+/* Heading */
+.why-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0c3e8b;
+}
+
+.why-title span {
+  color: #7ac943;
+}
+
+/* Boxes */
+.why-box {
+  background: #f3fbff;
+  padding: 18px 22px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.why-box-text {
+  font-size: 15px;
+  font-weight: 500;
+  color: #111827;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .why-title {
+    font-size: 24px;
+  }
+}
+
+
+
+/* ================= HOW CAROSA WORKS ================= */
+
+.how-carosa-section {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+/* Heading */
+.how-carosa-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0c3e8b;
+}
+
+.how-carosa-title span {
+  color: #7ac943;
+}
+
+.how-carosa-desc {
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+/* Steps Text */
+.step-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.step-desc {
+  font-size: 13px;
+  color: #6b7280;
+  max-width: 240px;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .how-carosa-title {
+    font-size: 24px;
+  }
+}
+
+
+
+
+/* ================= CAROSA KA BHAROSA ================= */
+
+.bharosa-section {
+  background: #f4fbff;
+}
+
+/* Heading */
+.bharosa-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0c3e8b;
+}
+
+.bharosa-title span {
+  color: #1f9d55;
+}
+
+.bharosa-desc {
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+/* Boxes */
+.bharosa-box {
+  background: transparent;
+  padding: 20px;
+}
+
+.icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.bharosa-box-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 14px;
+  color: #111827;
+}
+
+.bharosa-box-desc {
+  font-size: 13px;
+  color: #6b7280;
+  max-width: 260px;
+  margin: 6px auto 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bharosa-title {
+    font-size: 24px;
+  }
+}
+
+
+
+
+/* ================= COMMON ================= */
+.mt-50 {
+  margin-top: 50px;
+}
+
+/* ================= VEHICLE HISTORY ================= */
+
+.history-hero {
+  background: #eef9ff;
+  padding: 80px 0;
+}
+
+.vh-eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  color: #2563eb;
+  letter-spacing: 1px;
+}
+
+.vh-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: #0c3e8b;
+  line-height: 1.2;
+}
+
+.vh-desc {
+  font-size: 15px;
+  color: #475569;
+  max-width: 420px;
+  margin: 15px 0 25px;
+}
+
+/* CARD */
+.vh-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  max-width: 420px;
+}
+
+.vh-label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* BUTTONS */
+.vh-btn-orange {
+  background: #f7931e;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 30px;
+  padding: 12px;
+  border: none;
+}
+
+.vh-btn-orange:hover {
+  background: #e68410;
+}
+
+.vh-btn-green {
+  background: #84cc16;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 30px;
+  padding: 12px;
+  border: none;
+}
+
+.vh-btn-green:hover {
+  background: #65a30d;
+}
+
+/* DOWNLOAD */
+.vh-download {
+  max-width: 420px;
+  margin-top: 24px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .vh-title {
+    font-size: 32px;
+  }
+
+  .history-hero {
+    padding: 60px 0;
+  }
+}
+
+
+
+/* ================= WHY HISTORY CARDS ================= */
+/* ================= WHY HISTORY SECTION ================= */
+
+.why-history-cards {
+  background: #ffffff;
+  padding: 70px 0;
+}
+
+/* ================= HEADING ================= */
+
+.why-history-heading {
+  margin-bottom: 48px;
+}
+
+.why-history-heading h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #0c3e8b;
+  margin-bottom: 8px;
+}
+
+.why-history-heading h2 span {
+  color: #84cc16;
+}
+
+.why-history-heading p {
+  font-size: 14px;
+  color: #6b7280;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* ================= CARD ================= */
+
+.history-card {
+  border: 1.04px solid #8f92923d;
+  border-radius: 16px;
+  background: #ffffff;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 104px;          /* SAME HEIGHT FOR ALL */
+  width: 100%;
+}
+
+/* LEFT IMAGE BOX */
+.history-card-img {
+  width: 52px;
+  height: 52px;
+  background: #eef6ff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* TEXT */
+.history-card-text h6 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 4px;
+  line-height: 1.25;
+}
+
+.history-card-text p {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.35;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .why-history-heading h2 {
+    font-size: 26px;
+  }
+
+  .why-history-heading {
+    margin-bottom: 36px;
+  }
+
+  .history-card {
+    height: 96px;
+    padding: 16px;
+  }
+}
+
+
+
+
+
+
+
+
+.why-section {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+/* HEADING */
+.why-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0c3e8b;
+}
+
+.why-title span {
+  color: #39b872;
+}
+
+.why-desc {
+  font-size: 14px;
+  color: #6b7280;
+  max-width: 520px;
+  margin: 8px auto 0;
+}
+
+/* CARD */
+.why-card {
+  height: 100%;
+  background: #f5fbff;
+  border: 1px solid #e3f1ff;
+  border-radius: 14px;
+  padding: 20px 18px;
+  text-align: left; /* IMPORTANT: LEFT */
+}
+
+/* ICON BOX (LEFT) */
+.why-icon {
+  width: 56px;
+  height: 56px;
+  background: #ffffff;
+  border: 1px solid #e3f1ff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* TEXT */
+.why-text {
+  font-size: 13.5px;
+  color: #1f2937;
+  line-height: 1.4;
+  margin: 0;
+}
+
+
+
+
+.bharosa-section {
+  background: #eef9ff;
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+/* HEADER */
+.bharosa-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.bharosa-header h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0c3e8b;
+  margin: 0;
+}
+
+.bharosa-header p {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 2px 0 0;
+}
+
+/* ARROWS */
+.bharosa-arrows button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #dbeafe;
+  background: #fff;
+  font-size: 18px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+/* SLIDER */
+.bharosa-slider {
+  overflow: hidden;
+}
+
+.bharosa-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.4s ease;
+}
+
+/* CARD */
+.bharosa-card {
+  min-width: 340px; /* IMPORTANT */
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.rating {
+  font-size: 12px;
+  color: #f59e0b;
+  margin-bottom: 6px;
+}
+
+.rating span {
+  color: #2563eb;
+  margin-left: 6px;
+}
+
+.bharosa-card h6 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.bharosa-card p {
+  font-size: 13px;
+  color: #475569;
+  line-height: 1.4;
+  margin-bottom: 14px;
+}
+
+.user {
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+}
+
+
+
+
+
+
+
+/* ===== OUTER SECTION (WHITE BACKGROUND) ===== */
+.verify-section {
+  background: #ffffff; /* bahar ka bg white */
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+
+/* ===== BLUE BANNER ===== */
+.verify-banner {
+  background: #134a9e;
+  border-radius: 20px;
+  padding: 40px;
+  color: #ffffff;
+}
+
+/* Badge */
+.verify-badge {
+  background: rgba(255, 255, 255, 0.25);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+/* Title */
+.verify-title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+/* Description */
+.verify-desc {
+  font-size: 14px;
+  color: #e6efff;
+  max-width: 520px;
+  margin-bottom: 20px;
+}
+
+/* Button */
+.verify-btn {
+  background: #ff8a00;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 8px;
+  border: none;
+}
+
+.verify-btn:hover {
+  background: #e67b00;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .verify-section {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 24px;
+  }
+
+  .verify-banner {
+    padding: 24px;
+  }
+
+  .verify-title {
+    font-size: 22px;
+  }
+}
