@@ -302,6 +302,596 @@
   margin: 0;
 }
 
+/* ================= DRIVING SCHOOL SECTION CSS ================= */
+/* How It Works Section Cards Background - bg color #E5E5E5 */
+.how-it-works-card {
+  background: #E5E5E5 !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+  padding: 20px !important;
+  border-radius: 16px !important;
+  border: none !important;
+  box-shadow: none !important;
+  height: auto !important;
+}
+
+.how-it-works-card .fastag-icon-wrapper {
+  width: 64px !important;
+  height: 64px !important;
+  border-radius: 12px !important;
+  margin-bottom: 12px !important;
+  background-color: transparent !important;
+  border: none !important;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start !important;
+}
+
+.how-it-works-card .fastag-icon-wrapper img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.how-it-works-card .fastag-feature-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #111827 !important;
+  margin-bottom: 8px !important;
+  line-height: 1.3;
+  text-align: left !important;
+}
+
+.how-it-works-card .fastag-feature-text {
+  font-size: 0.938rem !important;
+  color: #374151 !important;
+  margin: 0 !important;
+  line-height: 1.6;
+  text-align: left !important;
+}
+
+/* Why It Matters Section Cards Background - bg color #EAF8FF */
+.why-it-matters-card {
+  background: #EAF8FF !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+  padding: 20px !important;
+  border-radius: 16px !important;
+  border: none !important;
+  box-shadow: none !important;
+  height: 100%;
+  display: flex;
+}
+
+.why-it-matters-card .fastag-icon-wrapper {
+  width: 64px !important;
+  height: 64px !important;
+  border-radius: 12px !important;
+  margin-bottom: 12px !important;
+  background-color: transparent !important;
+  border: none !important;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start !important;
+}
+
+.why-it-matters-card .fastag-icon-wrapper img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.why-it-matters-card .fastag-feature-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #0C3E8B !important;
+  margin-bottom: 8px !important;
+  line-height: 1.3;
+  text-align: left !important;
+}
+
+.why-it-matters-card .fastag-feature-text {
+  font-size: 0.938rem !important;
+  color: #0C3E8B !important;
+  margin: 0 !important;
+  line-height: 1.6;
+  text-align: left !important;
+}
+
+/* Fastag Icon Wrapper for cards */
+.fastag-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  background-color: #e8f5e9;
+  border: 2px solid #86CB3A;
+  padding: 10px;
+}
+
+/* RTO Services Section - Our RTO Services Cards */
+.fastag-offer-section .fastag-feature-card {
+  background: #ffffff !important;
+  border-radius: 16px !important;
+  padding: 24px !important;
+  border: 1px solid #E5E7EB !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: all 0.3s ease;
+}
+
+.fastag-offer-section .fastag-feature-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+.fastag-offer-section .fastag-icon-wrapper {
+  width: 64px !important;
+  height: 64px !important;
+  border-radius: 12px !important;
+  background-color: #E3F2FD !important;
+  border: none !important;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px !important;
+  flex-shrink: 0;
+}
+
+.fastag-offer-section .fastag-icon-wrapper img,
+.fastag-offer-section .fastag-icon-wrapper .fastag-feature-image {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.fastag-offer-section .fastag-feature-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #111827 !important;
+  margin-bottom: 8px !important;
+  line-height: 1.3;
+  text-align: left !important;
+}
+
+.fastag-offer-section .fastag-feature-text {
+  font-size: 0.938rem !important;
+  color: #6B7280 !important;
+  margin: 0 !important;
+  line-height: 1.6;
+  text-align: left !important;
+}
+
+/* Why Choose Section - Left Aligned */
+.why-choose-section .why-choose-row {
+  justify-content: flex-start !important;
+}
+
+/* Why Choose Section Cards - Horizontal Layout (Icon Left, Text Right) */
+.why-choose-section .fastag-feature-card {
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 16px;
+  padding: 20px !important;
+  height: auto !important;
+}
+
+.why-choose-section .fastag-icon-wrapper {
+  width: 64px !important;
+  height: 64px !important;
+  min-width: 64px;
+  flex-shrink: 0;
+  border-radius: 12px !important;
+  margin-bottom: 0 !important;
+  background-color: #E3F2FD !important;
+  border: none !important;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-choose-section .fastag-icon-wrapper img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* Text content wrapper - groups title and text together */
+.why-choose-section .fastag-feature-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.why-choose-section .fastag-feature-title {
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  color: #111827 !important;
+  margin-bottom: 4px !important;
+  line-height: 1.3;
+}
+
+.why-choose-section .fastag-feature-text {
+  font-size: 0.875rem !important;
+  color: #6B7280 !important;
+  margin: 0 !important;
+  line-height: 1.5;
+}
+
+/* Top Verified Driving Schools Section */
+.top-schools-section {
+  background: #ffffff;
+  padding: 80px 0;
+}
+
+.top-schools-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 1rem;
+}
+
+.top-schools-title .text-primary {
+  color: #0C3E8B !important;
+}
+
+.top-schools-title .osa {
+  color: #86CB3A !important;
+}
+
+.top-schools-subtitle {
+  font-size: 1rem;
+  color: #6c757d;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.school-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #E5E5E5;
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+.school-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.school-card-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.school-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.school-card-content {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.school-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #0C3E8B;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.location-icon {
+  font-size: 16px;
+}
+
+.school-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0C3E8B;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.school-specialization {
+  font-size: 0.938rem;
+  color: #6c757d;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.school-price {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 16px;
+}
+
+.school-book-btn {
+  background-color: #F59E0B;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.school-book-btn:hover {
+  background-color: #e55a2b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+/* Responsive for Top Schools */
+@media (max-width: 992px) {
+  .top-schools-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-schools-section {
+    padding: 60px 0;
+  }
+
+  .top-schools-title {
+    font-size: 1.75rem;
+  }
+
+  .school-card-image {
+    height: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .top-schools-title {
+    font-size: 1.5rem;
+  }
+
+  .school-card-image {
+    height: 160px;
+  }
+
+  .school-card-content {
+    padding: 16px;
+  }
+}
+
+/* ================= DOCUMENTS REQUIRED SECTION CSS (Learner's License) ================= */
+/* Documents Required Cards - Green circular icons, white cards */
+.documents-required-card {
+  background: #ffffff !important;
+  border-radius: 16px !important;
+  padding: 24px !important;
+  border: 1px solid #E5E7EB !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.documents-required-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+.documents-required-icon-wrapper {
+  width: 80px !important;
+  height: 80px !important;
+  border-radius: 50% !important;
+  background-color: transparent !important;
+  border: none !important;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px !important;
+}
+
+.documents-required-icon-wrapper img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.documents-required-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: #111827 !important;
+  margin-bottom: 8px !important;
+  line-height: 1.3;
+}
+
+.documents-required-text {
+  font-size: 0.938rem !important;
+  color: #6B7280 !important;
+  margin: 0 !important;
+  line-height: 1.6;
+}
+
+/* Responsive for Documents Required */
+@media (max-width: 992px) {
+  .documents-required-card {
+    padding: 20px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .documents-required-icon-wrapper {
+    width: 70px !important;
+    height: 70px !important;
+  }
+
+  .documents-required-icon-wrapper img {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Apply Eligibility Section - Horizontal Cards (Icon Left, Content Right) */
+.eligibility-card {
+  background: #F4FBFF !important;
+  border-radius: 16px !important;
+  padding: 16px 20px !important;
+  border: 1px solid #E5E7EB !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+  height: auto !important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.3s ease;
+}
+
+.eligibility-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+.eligibility-icon-wrapper {
+  width: 60px !important;
+  height: 60px !important;
+  min-width: 60px;
+  flex-shrink: 0;
+  border-radius: 50% !important;
+  background-color: #86CB3A !important;
+  border: 2px solid #86CB3A !important;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eligibility-badge {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #0C3E8B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.eligibility-icon-img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+/* Remove green background for image-based icons */
+.eligibility-icon-wrapper.eligibility-icon-img-wrapper {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.eligibility-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eligibility-title {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: #111827 !important;
+  margin-bottom: 4px !important;
+  line-height: 1.3;
+}
+
+.eligibility-text {
+  font-size: 0.938rem !important;
+  color: #6B7280 !important;
+  margin: 0 !important;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .eligibility-card {
+    padding: 14px 16px !important;
+    gap: 12px;
+  }
+
+  .eligibility-icon-wrapper {
+    width: 50px !important;
+    height: 50px !important;
+    min-width: 50px;
+  }
+
+  .eligibility-badge {
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
+  }
+
+  .eligibility-icon-img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .eligibility-title {
+    font-size: 0.938rem !important;
+  }
+
+  .eligibility-text {
+    font-size: 0.875rem !important;
+  }
+}
+
+/* After You Receive LL Section - Cards Background #E5E5E5, Icon Background Transparent */
+.after-ll-section .how-it-works-card {
+  background: #E5E5E5 !important;
+}
+
+.after-ll-section .how-it-works-card .fastag-icon-wrapper {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
 /* How It Works Section */
 .fastag-how-it-works-section {
   background-color: #ffffff;
@@ -3161,4 +3751,586 @@ border: 1px solid #E5E5E5;
   .verify-title {
     font-size: 22px;
   }
+}
+
+
+
+/* carosa-rto==== Sanket date-04/01/2026 */
+
+
+.fastag-feature-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  height: 100%;
+  border: 0.96px solid #8F92923D;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hover optional – UI me very subtle hota hai */
+.fastag-feature-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.fastag-feature-image {
+  margin-bottom: 12px;
+}
+
+.fastag-feature-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 6px;
+}
+
+.fastag-feature-text {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.4;
+  margin: 0;
+}
+
+
+
+
+
+/* ================= WHY IT MATTERS ================= */
+
+.why-matters-section {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.why-matters-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 28px 32px;
+}
+
+.why-matters-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0c3e8b;
+  margin-bottom: 10px;
+}
+
+.why-matters-title span {
+  color: #7ac943;
+}
+
+.why-matters-text {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+
+/* ================= HERO SECTION ================= */
+
+.driving-school-hero {
+  background: linear-gradient(180deg, #e9f6ff 0%, #d8ecfb 100%);
+  padding: 80px 0 0;        /* 🔥 bottom space removed */
+  position: relative;
+  overflow: hidden;
+}
+
+/* LEFT CONTENT */
+.hero-left {
+  position: relative;
+  z-index: 3;
+  padding-left: 80px;
+}
+
+.hero-title {
+  font-size: 52px;
+  font-weight: 800;
+  color: #0c3e8b;
+  line-height: 1.2;
+}
+
+.hero-title span {
+  color: #8cc63f;
+}
+
+.hero-desc {
+  font-size: 18px;
+  color: #4b5563;
+  max-width: 520px;
+  margin: 20px 0 30px;
+}
+
+.hero-btn {
+  background: #f59e0b;
+  border: none;
+  padding: 14px 36px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* ================= FORM ================= */
+
+.hero-form-col {
+  position: relative;
+  z-index: 5;        /* image se upar */
+  top: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+.driving-school-form-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 36px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
+  width: 92%;
+  max-width: 420px;
+}
+
+.driving-school-form-title {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.driving-school-input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  font-size: 15px;
+}
+
+.driving-school-input:focus {
+  outline: none;
+  border-color: #0c3e8b;
+  box-shadow: 0 0 0 3px rgba(12, 62, 139, 0.15);
+}
+
+.driving-school-submit-btn {
+  background: #f59e0b;
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+/* ================= IMAGE (UP 80px, NO BOTTOM GAP) ================= */
+
+.driving-school-bg {
+  position: relative;
+  width: 100%;
+  margin-top: -120px;    /* 🔥 image 80px upar */
+  z-index: 1;
+}
+
+.driving-school-bg img {
+  width: 100%;
+  height: auto;
+  display: block;       /* 🔥 bottom gap fix */
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 992px) {
+  .hero-left {
+    padding-left: 24px;
+    margin-bottom: 40px;
+  }
+
+  .hero-title {
+    font-size: 40px;
+  }
+
+  .hero-form-col {
+    top: 50px;
+  }
+
+  .driving-school-bg {
+    margin-top: -50px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-desc {
+    font-size: 16px;
+  }
+
+  .hero-form-col {
+    top: 30px;
+  }
+
+  .driving-school-bg {
+    margin-top: -30px;
+  }
+}
+
+/* ================= BEFORE YOU DRIVE SECTION ================= */
+
+.driving-safety-hero-img {
+  height: auto;
+  max-height: 450px;
+  object-fit: contain;
+}
+
+.before-drive-section {
+  background: #ffffff;
+  padding: 80px 0;
+}
+
+/* Heading */
+.before-drive-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0C3E8B;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.before-drive-title .text-green {
+  color: #86CB3A;
+}
+
+.before-drive-subtitle {
+  font-size: 1rem;
+  color: #374151;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+/* Checklist Panels */
+.checklist-panel {
+  background: #ffffff;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 24px;
+  height: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.checklist-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+.checklist-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.checklist-items li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  font-size: 0.938rem;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.checklist-items li:last-child {
+  margin-bottom: 0;
+}
+
+.check-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: #86CB3A;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  margin-right: 10px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Quick Tools Section */
+.quick-tools-section {
+  margin-top: 32px;
+}
+
+.quick-tools-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0C3E8B;
+  margin-bottom: 20px;
+}
+
+/* Contact Cards */
+.contact-card {
+  background: #ffffff;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.contact-icon-box {
+  width: 48px;
+  height: 48px;
+  background: #E3F2FD;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-icon {
+  font-size: 24px;
+  color: #0C3E8B;
+}
+
+.contact-info {
+  flex: 1;
+}
+
+.contact-title {
+  font-size: 0.938rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.contact-detail {
+  font-size: 0.875rem;
+  color: #6B7280;
+  margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .before-drive-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .before-drive-section {
+    padding: 60px 0;
+  }
+
+  .before-drive-title {
+    font-size: 1.75rem;
+  }
+
+  .before-drive-subtitle {
+    font-size: 0.938rem;
+  }
+
+  .checklist-panel {
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+
+  .quick-tools-title {
+    font-size: 1.125rem;
+  }
+
+  .contact-card {
+    padding: 16px;
+  }
+
+  .driving-safety-hero-img {
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 576px) {
+  .before-drive-title {
+    font-size: 1.5rem;
+  }
+
+  .checklist-items li {
+    font-size: 0.875rem;
+  }
+
+  .contact-title {
+    font-size: 0.875rem;
+  }
+
+  .contact-detail {
+    font-size: 0.813rem;
+  }
+
+  .driving-safety-hero-img {
+    max-height: 350px;
+  }
+}
+
+/* ================= TEST DRIVE SECTION ================= */
+
+.test-drive-section {
+  background: #ffffff;
+  padding: 80px 0;
+}
+
+.test-drive-content {
+  text-align: center;
+}
+
+.test-drive-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0C3E8B;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.test-drive-title .text-green {
+  color: #86CB3A;
+}
+
+.test-drive-subtitle {
+  font-size: 1rem;
+  color: #374151;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.test-drive-point {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.test-drive-icon-wrapper {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.test-drive-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.test-drive-text {
+  font-size: 0.938rem;
+  color: #374151;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 280px;
+}
+
+/* Responsive Styles for Test Drive Section */
+@media (max-width: 992px) {
+  .test-drive-title {
+    font-size: 2rem;
+  }
+
+  .test-drive-icon-wrapper {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .test-drive-section {
+    padding: 60px 0;
+  }
+
+  .test-drive-title {
+    font-size: 1.75rem;
+  }
+
+  .test-drive-subtitle {
+    font-size: 0.938rem;
+    margin-bottom: 32px;
+  }
+
+  .test-drive-icon-wrapper {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 16px;
+  }
+
+  .test-drive-text {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .test-drive-title {
+    font-size: 1.5rem;
+  }
+
+  .test-drive-icon-wrapper {
+    width: 80px;
+    height: 80px;
+  }
+
+  .test-drive-text {
+    font-size: 0.813rem;
+    max-width: 100%;
+  }
+}
+
+/* ================= FORM CARD TITLE & LABEL ================= */
+
+.form-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 24px;
+}
+
+.form-label {
+  font-size: 0.938rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* Why Choose Carosa Section - Ensure all images have same size and left align */
+.fastag-benefit-icon-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.fastag-benefit-icon-wrapper .fastag-benefit-image {
+  width: 60px !important;
+  height: 60px !important;
+  object-fit: contain !important;
+  display: block;
+  margin: 0;
 }
