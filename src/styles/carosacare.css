@@ -733,6 +733,15 @@
   object-fit: contain;
 }
 
+/* Documents Required Section - Direct Image without wrapper */
+.fastag-feature-card .documents-required-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  margin-bottom: 16px;
+  display: block;
+}
+
 .documents-required-title {
   font-size: 1.125rem !important;
   font-weight: 700 !important;
@@ -4333,4 +4342,620 @@ border: 1px solid #E5E5E5;
   object-fit: contain !important;
   display: block;
   margin: 0;
+}
+
+/* ================= INSURANCE SECTION CSS (src/components/carosa-care/insurance.jsx) ================= */
+.insurance-features-section {
+  background: #ffffff;
+  padding: 80px 0;
+}
+
+.insurance-content {
+  padding-right: 40px;
+}
+
+.insurance-main-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0C3E8B;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.insurance-main-title .text-green {
+  color: #86CB3A;
+}
+
+.insurance-description {
+  font-size: 1rem;
+  color: #374151;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.insurance-tagline {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0C3E8B;
+  margin-bottom: 32px;
+}
+
+/* Insurance Feature Cards */
+.insurance-feature-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  height: 100%;
+  transition: all 0.3s ease;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.insurance-feature-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.insurance-check-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Insurance Why Choose Section Icons */
+.insurance-why-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  flex-shrink: 0;
+  margin-right: 16px;
+}
+
+/* Insurance Types Section - Vertical Layout */
+.insurance-types-section .insurance-type-card {
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  padding: 18px 20px !important;
+  min-height: 140px !important;
+  background-color: #F6FCFF !important;
+}
+
+.insurance-types-section .insurance-type-icon {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  margin-bottom: 10px !important;
+  flex-shrink: 0;
+  background-color: transparent !important;
+}
+
+.insurance-types-section .insurance-type-card .fastag-feature-content {
+  width: 100%;
+}
+
+.insurance-feature-content {
+  flex: 1;
+}
+
+.insurance-feature-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+.insurance-feature-text {
+  font-size: 0.875rem;
+  color: #6B7280;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Insurance Form Card */
+.insurance-form-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.insurance-form-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.insurance-form-subtitle {
+  font-size: 0.938rem;
+  color: #6B7280;
+  margin-bottom: 24px;
+}
+
+.insurance-btn-estimate {
+  background: #F28B18;
+  border: none;
+  color: #FFFFFF;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  flex: 1;
+  transition: all 0.3s ease;
+}
+
+.insurance-btn-estimate:hover {
+  background: #e67b00;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.insurance-btn-renew {
+  background: #0C3E8B;
+  border: none;
+  color: #FFFFFF;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  flex: 1;
+  transition: all 0.3s ease;
+}
+
+.insurance-btn-renew:hover {
+  background: #0a2f6b;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* Responsive for Insurance Section */
+@media (max-width: 992px) {
+  .insurance-content {
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+
+  .insurance-main-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .insurance-features-section {
+    padding: 60px 0;
+  }
+
+  .insurance-main-title {
+    font-size: 1.5rem;
+  }
+
+  .insurance-form-card {
+    padding: 24px;
+  }
+
+  .insurance-btn-estimate,
+  .insurance-btn-renew {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+}
+
+/* ============================================
+   EXTENDED WARRANTY PAGE - WARRANTY QUOTE FORM SECTION
+   File: src/components/carosa-care/extended-warranty.jsx
+   Date: 07/01/2026
+   ============================================ */
+
+.warranty-quote-section {
+  background: #ffffff;
+  padding: 80px 0;
+}
+
+.warranty-quote-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid #E5E7EB;
+}
+
+/* HEADER */
+.warranty-quote-header {
+  text-align: center;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.warranty-quote-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.warranty-quote-title .text-primary {
+  color: #0C3E8B;
+}
+
+.warranty-quote-title .text-green {
+  color: #86CB3A;
+}
+
+.warranty-quote-subtitle {
+  font-size: 1rem;
+  color: #6B7280;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* FORM */
+.warranty-quote-form {
+  margin-top: 24px;
+}
+
+.warranty-form-label {
+  display: block;
+  font-size: 0.938rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.warranty-form-input,
+.warranty-form-select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #111827;
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+}
+
+.warranty-form-input:focus,
+.warranty-form-select:focus {
+  outline: none;
+  border-color: #0C3E8B;
+  box-shadow: 0 0 0 3px rgba(12, 62, 139, 0.1);
+}
+
+.warranty-form-input::placeholder {
+  color: #9CA3AF;
+}
+
+.warranty-form-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23374151' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+/* SUBMIT BUTTON */
+.warranty-form-submit {
+  text-align: center;
+  margin-top: 8px;
+}
+
+.warranty-submit-btn {
+  background: #F28B18;
+  color: #FFFFFF;
+  border: none;
+  padding: 14px 48px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.warranty-submit-btn:hover {
+  background: #e67b00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(242, 139, 24, 0.3);
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .warranty-quote-card {
+    padding: 32px;
+  }
+
+  .warranty-quote-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .warranty-quote-section {
+    padding: 60px 0;
+  }
+
+  .warranty-quote-card {
+    padding: 24px;
+  }
+
+  .warranty-quote-title {
+    font-size: 1.5rem;
+  }
+
+  .warranty-quote-subtitle {
+    font-size: 0.938rem;
+  }
+
+  .warranty-form-label {
+    font-size: 0.875rem;
+  }
+
+  .warranty-form-input,
+  .warranty-form-select {
+    font-size: 0.938rem;
+    padding: 10px 14px;
+  }
+
+  .warranty-submit-btn {
+    padding: 12px 32px;
+    font-size: 0.938rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .warranty-quote-card {
+    padding: 20px;
+  }
+
+  .warranty-quote-header {
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+  }
+
+  .warranty-quote-title {
+    font-size: 1.25rem;
+  }
+
+  .warranty-quote-subtitle {
+    font-size: 0.875rem;
+  }
+}
+
+/* ============================================
+   EXTENDED WARRANTY PAGE - WHAT'S COVERED SECTION
+   File: src/components/carosa-care/extended-warranty.jsx
+   Date: 07/01/2026
+   ============================================ */
+
+.warranty-covered-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid #E5E7EB;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.warranty-covered-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.warranty-covered-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  background: #E3F2FD;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.warranty-covered-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.warranty-covered-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.warranty-covered-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.warranty-covered-list li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  font-size: 0.938rem;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.warranty-covered-list li:last-child {
+  margin-bottom: 0;
+}
+
+.warranty-covered-list .check-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: #86CB3A;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  margin-right: 10px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .warranty-covered-card {
+    padding: 20px;
+  }
+
+  .warranty-covered-icon-wrapper {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 12px;
+  }
+
+  .warranty-covered-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .warranty-covered-title {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+
+  .warranty-covered-list li {
+    font-size: 0.875rem;
+    margin-bottom: 10px;
+  }
+}
+
+/* ============================================
+   INSPECTION VALUATION PAGE - WHAT YOU GET IN INSPECTION REPORT SECTION
+   File: src/components/carosa-care/inspection-valuation.jsx
+   Date: 08/01/2026
+   ============================================ */
+
+.inspection-report-section {
+  background: #ffffff;
+  padding: 80px 0;
+}
+
+.inspection-report-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid #E5E7EB;
+  height: 100%;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.inspection-report-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.inspection-report-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  background: #E3F2FD;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.inspection-report-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.inspection-report-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.inspection-report-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.inspection-report-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  font-size: 0.938rem;
+  color: #000000;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.inspection-report-list .check-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: #86CB3A;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  margin-right: 10px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .inspection-report-section {
+    padding: 60px 0;
+  }
+
+  .inspection-report-card {
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+
+  .inspection-report-icon-wrapper {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 12px;
+  }
+
+  .inspection-report-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .inspection-report-title {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+
+  .inspection-report-list li {
+    font-size: 0.875rem;
+    margin-bottom: 10px;
+  }
 }

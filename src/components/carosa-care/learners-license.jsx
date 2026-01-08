@@ -94,7 +94,7 @@ export default function LearnerLicensePage() {
             <Col lg={5} className="px-0">
               <div className="fastag-hero-illustration text-end">
                 <img
-                  src="/images/safetyBanner.png"
+                  src="/images/learnerHero.png"
                   alt="Learner’s Licence Assistance"
                   className="w-100 driving-safety-hero-img"
                 />
@@ -371,63 +371,48 @@ export default function LearnerLicensePage() {
               </p>
             </Col>
           </Row>
-
-          <Row className="g-4 padding-Y-X justify-content-center">
-            <Col xs={12} sm={6} md={4} lg={2}>
-              <div className="documents-required-card">
-                <div className="documents-required-icon-wrapper">
-                  <img src="/images/Documents1.png" alt="Age proof" />
-                </div>
-                <h4 className="documents-required-title">Age proof</h4>
-                <p className="documents-required-text">
+          <Row className="g-4 padding-Y-X">
+            <Col xs={12} sm={6} md={4} lg={2} xl={2}>
+              <div className="fastag-feature-card">
+                <img src="/images/Documents1.png" alt="Age proof" className="fastag-feature-image documents-required-icon" />
+                <h4 className="fastag-feature-title">Age proof</h4>
+                <p className="fastag-feature-text">
                   (Aadhar, Passport, Birth Certificate)
                 </p>
               </div>
             </Col>
-
-            <Col xs={12} sm={6} md={4} lg={2}>
-              <div className="documents-required-card">
-                <div className="documents-required-icon-wrapper">
-                  <img src="/images/Documents2.png" alt="Address proof" />
-                </div>
-                <h4 className="documents-required-title">Address proof</h4>
-                <p className="documents-required-text">
+            <Col xs={12} sm={6} md={4} lg={2} xl={2}>
+              <div className="fastag-feature-card">
+                <img src="/images/Documents2.png" alt="Address proof" className="fastag-feature-image documents-required-icon" />
+                <h4 className="fastag-feature-title">Address proof</h4>
+                <p className="fastag-feature-text">
                   (Aadhar, Rental Agreement, Utility Bill)
                 </p>
               </div>
             </Col>
-
-            <Col xs={12} sm={6} md={4} lg={2}>
-              <div className="documents-required-card">
-                <div className="documents-required-icon-wrapper">
-                  <img src="/images/Documents3.png" alt="Photo" />
-                </div>
-                <h4 className="documents-required-title">Photo</h4>
-                <p className="documents-required-text">
+            <Col xs={12} sm={6} md={4} lg={2} xl={2}>
+              <div className="fastag-feature-card">
+                <img src="/images/Documents3.png" alt="Photo" className="fastag-feature-image documents-required-icon" />
+                <h4 className="fastag-feature-title">Photo</h4>
+                <p className="fastag-feature-text">
                   Passport-sized photographs
                 </p>
               </div>
             </Col>
-
-            <Col xs={12} sm={6} md={4} lg={2}>
-              <div className="documents-required-card">
-                <div className="documents-required-icon-wrapper">
-                  <img src="/images/Documents4.png" alt="Medical certificate" />
-                </div>
-                <h4 className="documents-required-title">Medical certificate</h4>
-                <p className="documents-required-text">
+            <Col xs={12} sm={6} md={4} lg={2} xl={2}>
+              <div className="fastag-feature-card">
+                <img src="/images/Documents4.png" alt="Medical certificate" className="fastag-feature-image documents-required-icon" />
+                <h4 className="fastag-feature-title">Medical certificate</h4>
+                <p className="fastag-feature-text">
                   Medical certificate (Form 1A if applicable)
                 </p>
               </div>
             </Col>
-
-            <Col xs={12} sm={6} md={4} lg={2}>
-              <div className="documents-required-card">
-                <div className="documents-required-icon-wrapper">
-                  <img src="/images/Documents5.png" alt="Filled Application" />
-                </div>
-                <h4 className="documents-required-title">Filled Application</h4>
-                <p className="documents-required-text">
+            <Col xs={12} sm={6} md={4} lg={2} xl={2}>
+              <div className="fastag-feature-card">
+                <img src="/images/Documents5.png" alt="Filled Application" className="fastag-feature-image documents-required-icon" />
+                <h4 className="fastag-feature-title">Filled Application</h4>
+                <p className="fastag-feature-text">
                   Filled Application Form (Form 2) — we help you fill
                 </p>
               </div>
