@@ -155,6 +155,24 @@ export default function VehicleHistoryPage() {
     }
   ];
 
+  const stories = [
+  {
+    title: "Found Hidden Challans",
+    text: "Rohit was about to buy a 2017 Swift. Carosa revealed ₹4,200 pending challans the seller didn’t mention. He negotiated better and bought confidently.",
+    name: "Rohit (Delhi)"
+  },
+  {
+    title: "Verified RC & Insurance",
+    text: "Rohit was about to buy a 2017 Swift. Carosa revealed ₹4,200 pending challans the seller didn’t mention. He negotiated better and bought confidently.",
+    name: "Anjali (Mumbai)"
+  },
+  {
+    title: "Exposed Fake Seller",
+    text: "Rohit was about to buy a 2017 Swift. Carosa revealed ₹4,200 pending challans the seller didn’t mention. He negotiated better and bought confidently.",
+    name: "Faisal (Bangalore)"
+  }
+];
+
   return (
     <>
       {/* ================= HERO SECTION ================= */}
@@ -337,6 +355,76 @@ export default function VehicleHistoryPage() {
 
         </div>
       </section>
+      
+      <section className="py-5" style={{ background: "#eef8fd" }}>
+  <div className="container">
+
+    {/* HEADING */}
+    <div className="d-flex justify-content-between align-items-center mb-4">
+      <div>
+        <h2 className="fw-bold mb-1">
+          Stories of <span className="text-primary">Bharosa</span>
+        </h2>
+        <p className="text-muted mb-0">The Heart of Our Mission</p>
+      </div>
+
+      {/* ARROWS (UI ONLY) */}
+      <div className="d-none d-md-flex gap-2">
+        <button className="btn btn-light rounded-circle">‹</button>
+        <button className="btn btn-light rounded-circle">›</button>
+      </div>
+    </div>
+
+    {/* CARDS */}
+    <div className="row g-4">
+      {stories.map((item, index) => (
+        <div className="col-12 col-md-6 col-lg-4" key={index}>
+          <div className="bg-white h-100 rounded-4 p-4 shadow-sm">
+
+            {/* ⭐ RATING */}
+            <div className="mb-2">
+              <span style={{ color: "#f4b400", fontSize: "14px" }}>
+                ★★★★★
+              </span>
+              <span className="text-muted ms-2 small">
+                4.8/5 Rating
+              </span>
+            </div>
+
+            {/* TITLE */}
+            <h6 className="fw-bold mb-2">
+              {item.title}
+            </h6>
+
+            {/* TEXT */}
+            <p className="text-muted small mb-3">
+              {item.text}
+            </p>
+
+            {/* USER */}
+            <div className="d-flex align-items-center gap-2">
+              <span
+                style={{
+                  width: "8px",
+                  height: "8px",
+                  backgroundColor: "#22c55e",
+                  borderRadius: "50%",
+                  display: "inline-block"
+                }}
+              />
+              <span className="fw-semibold small">
+                {item.name}
+              </span>
+            </div>
+
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
 
       {/* ================= VERIFY BANNER ================= */}
       <section className="verify-section">
@@ -379,6 +467,8 @@ export default function VehicleHistoryPage() {
           </div>
         </div>
       </section>
+
+      
 
       {/* FAQ Section */}
       <section className="fastag-faq-section py-5">
