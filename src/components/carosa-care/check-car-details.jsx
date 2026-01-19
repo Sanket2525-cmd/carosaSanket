@@ -515,3 +515,12 @@ export default function CarDetailsCardPage() {
     </>
   );
 }
+
+
+
+
+
+
+
+
+

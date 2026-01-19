@@ -5044,3 +5044,245 @@ border: 1px solid #E5E5E5;
     padding: 20px;
   }
 }
+
+/*               Fetching Data             */
+
+/* Section spacing */
+.challan-section {
+  margin-top: 120px;
+  margin-bottom: 50px;
+}
+
+/* Card container */
+.vehicle-fetching-card {
+  max-width: 1020px;
+  width: 100%;
+  min-height: 400px;
+}
+
+/* Image wrapper */
+.vehicle-image-wrapper {
+  position: relative;
+  width: 420px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Car overlay image */
+.vehicle-car-overlay {
+  position: absolute;
+  top: 18px;
+  left: 40%;
+  transform: translateX(-50%);
+}
+
+
+
+
+/*                                             check-car-details2 */
+.car-details-container {
+  margin-top: 90px;
+  background-color: #eaf8ff;
+  padding: 1rem 3rem;
+}
+
+/* Breadcrumb */
+.breadcrumb-bar {
+  background: #eaf8ff;
+  font-size: 13px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+/* Vehicle card */
+.vehicle-card-body {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.vehicle-icon {
+  width: 56px;
+  height: 56px;
+  background: #f3f8ff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vehicle-icon img {
+  width: 32px;
+}
+
+.change-vehicle-btn {
+  background: #7ac943;
+  border: none;
+  border-radius: 999px;
+  padding: 6px 14px;
+}
+
+/* Status bar */
+.status-bar {
+  background: #f4fbff;
+  border-radius: 14px;
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.carosa-text {
+  color: #6cc04a;
+}
+
+.status-pills {
+  background: #fff;
+  padding: 4px;
+  border-radius: 999px;
+  display: flex;
+  gap: 6px;
+}
+
+.pill {
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.pill.active {
+  background: #f7931e;
+  color: #fff;
+}
+
+/* Online challan header */
+.online-challan-header {
+  border-top: 1px solid #e6eef5;
+  padding-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.deselect-text {
+  color: #f7931e;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ========================= */
+/* Challan card (SAME HEIGHT FIX) */
+/* ========================= */
+.challan-card {
+  border-radius: 14px;
+  border: none;
+  background-color: #ffffff;
+  min-height: 270px; /* ✅ SAME HEIGHT AS ORIGINAL */
+  display: flex;
+}
+
+.challan-card-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* push footer to bottom */
+.challan-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.challan-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.challan-type {
+  background: #eaf6ff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.challan-check {
+  width: 18px;
+  height: 18px;
+  background: #f7931e;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.challan-no {
+  color: #0d6efd;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.pending-text {
+  color: #0d6efd;
+  font-weight: 600;
+}
+
+.pending-text span {
+  color: #28a745;
+}
+
+.details-btn {
+  background: #0b3c89;
+  border: none;
+  border-radius: 999px;
+  padding: 6px 18px;
+}
+
+/* Summary */
+.summary-card {
+  border-radius: 14px;
+  overflow: hidden;
+  border: none;
+}
+
+.summary-top {
+  background: #8cd63f;
+  color: #fff;
+  text-align: center;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.summary-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+
+.summary-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.offline-btn {
+  background: #f7931e;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 20px;
+}
+
+.pay-btn {
+  background: #0b3c89;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 20px;
+}
